@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Description = () => {
+export const Description = () => {
     return (
         <div></div>
     )
