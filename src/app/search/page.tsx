@@ -1,4 +1,5 @@
-import Header from "@/app/component/Header"
+import Link from "next/link";
+import Header from "./../component/Header";
 
 export default function Search() {
     return (
