@@ -33,17 +33,19 @@ export default function Home() {
         <div className='w-full h-auto flex flex-row justify-around bg-white'>
           {/* 空き家 */}
           <div className='flex flex-col items-center mt-24 mb-36 rounded-lg bg-brown-light border-2 border-brown-dark'>
-
+            <img src="/home.svg" alt="Icon"/>
             <div className='mt-60 px-20 text-brown-dark text-center'>リノベーション可能な<br />空き家を探したい</div>
             <button className='mt-36 mb-24 mx-40 px-32 py-8 rounded-lg bg-brown-dark text-white'>詳細を見る</button>
           </div>
           {/* 例*/}
           <div className='flex flex-col items-center mt-24 mb-36 rounded-lg bg-brown-light border-2 border-brown-dark'>
+            <img src="/tool.svg" alt="Icon"/>
             <div className='mt-60 px-20 text-brown-dark text-center'>リノベーションされた<br/>施設・家の例を見たい</div>
             <button className='mt-36 mb-24 mx-40 px-32 py-8 rounded-lg bg-brown-dark text-white'>詳細を見る</button>
           </div>
           {/* 相談*/}
           <div className='flex flex-col items-center mt-24 mb-36 rounded-lg bg-brown-light border-2 border-brown-dark'>
+            <img src="/personSearch.svg" alt="Icon"/>
             <div className='mt-60 px-20 text-brown-dark text-center'>リノベーション経験者に<br/>相談をしたい</div>
             <button className='mt-36 mb-24 mx-40 px-32 py-8 rounded-lg bg-brown-dark text-white'>詳細を見る</button>
           </div>
