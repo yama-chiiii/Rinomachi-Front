@@ -1,6 +1,6 @@
 export default function Header(){
     return(
-        <div className="flex justify-center">
+        <div className="flex justify-center z-50">
             <div className="w-full lg:w-1/2 flex fixed top-0">
                 <button type="button" className="top-0 bg-brown-dark flex text-white font-mPlus px-20 py-20 font-bold text-xl">
                     リノマチ!
