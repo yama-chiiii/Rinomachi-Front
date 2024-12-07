@@ -43,7 +43,8 @@ export default {
         mPlus: ['"M PLUS Rounded 1c"', 'serif'],
       },
       fontSize: {
-        xxxs:"8px",
+        "4xs":"4px",
+        "3xs":"8px",
         xxs: "10px",
         xs: "12px",
         sm: "14px",
