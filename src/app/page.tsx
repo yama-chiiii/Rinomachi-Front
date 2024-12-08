@@ -19,7 +19,7 @@ export default function Home() {
         </div>
         <div className='w-full flex justify-center relative mt-64'>
           {/* 要修正 */}
-          <div className='absolute -top-24% right-8% px-12 py-28 rounded-full text-center text-md bg-red-dark text-white'>
+          <div className='absolute -top-24% right-8% px-10 lg:px-12 py-24 lg:py-28 rounded-full text-center text-sm lg:text-md bg-red-dark text-white'>
             はじめての
             <br />
             人向け
