@@ -19,7 +19,7 @@ export default function Home() {
         </div>
         <div className='w-full flex justify-center relative mt-64'>
           {/* 要修正 */}
-          <div className='absolute -top-24% right-8% px-10 lg:px-12 py-24 lg:py-28 rounded-full text-center text-sm lg:text-md bg-red-dark text-white'>
+          <div className='absolute -top-44% right-12% lg:right-8% px-8 lg:px-12 py-20 lg:py-32 rounded-full text-center text-xs lg:text-lg bg-red-dark text-white'>
             はじめての
             <br />
             人向け
@@ -32,10 +32,10 @@ export default function Home() {
         <div className='w-full mt-60 mb-12 px-60 text-2xl lg:text-4xl text-brown-dark'>
           相談する・探す
         </div>
-        <div className='w-4/5 lg:w-auto h-auto flex flex-col lg:flex-row justify-around mx-4 py-20 lg:py-0 lg:mx-32 px-12 lg:px-20 rounded-md bg-white'>
+        <div className='w-4/5 lg:w-auto h-auto flex flex-col lg:flex-row justify-around mx-4 pb-20 py-12 lg:mx-32 px-12 lg:px-20 rounded-md bg-white'>
           {/* 空き家 */}
           <div className='flex flex-col relative items-center lg:px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
-            <div className='absolute -top-12% right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
+            <div className='absolute -top-12% right-46% lg:right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
               <img src='/home.svg' alt='Icon' className='w-32' />
             </div>
             <div className='mt-52 text-brown-dark text-center text-xl lg:text-base'>
@@ -48,7 +48,7 @@ export default function Home() {
             </button>
           </div>
           <div className='flex flex-col relative items-center px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
-            <div className='absolute -top-12% right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
+            <div className='absolute -top-12% right-46% lg:right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
               <img src='/tool.svg' alt='Icon' className='w-32' />
             </div>
             <div className='mt-52 text-brown-dark text-xl lg:text-base text-center'>
@@ -61,7 +61,7 @@ export default function Home() {
             </button>
           </div>
           <div className='flex flex-col relative items-center px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
-            <div className='absolute -top-12% right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
+            <div className='absolute -top-12% right-46% lg:right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
               <img src='/person_search.svg' alt='Icon' className='w-32' />
             </div>
             <div className='mt-52 text-brown-dark text-xl lg:text-base text-center'>
@@ -105,7 +105,7 @@ export default function Home() {
                   <br />
                   ランキング
                 </div>
-                <div className='text-lg mt-12'>11年連続</div>
+                <div className='text-lg mt-8'>11年連続</div>
               </div>
               <div className='w-1/4 h-1/5 flex flex-col-reverse items-center'>
                 <Link
@@ -136,7 +136,7 @@ export default function Home() {
             </div>
             <div className='w-3/4 lg:w-3/5 mx-4 lg:mx-12 pt-8 mb-16 lg:mb-0 flex flex-col items-center rounded-md bg-brown-light text-brown-dark'>
               <div className='h-4/5 flex flex-col items-center box-border'>
-                <div className='mt-12 text-md lg:text-sm text-center whitespace-nowrap'>
+                <div className='mt-14 text-md lg:text-sm text-center whitespace-nowrap'>
                   日本新三大夜景都市
                 </div>
                 <div className='text-sm mb-20'>(北九州)</div>
