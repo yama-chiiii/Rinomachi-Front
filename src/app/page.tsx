@@ -43,10 +43,12 @@ export default function Home() {
               <br />
               空き家を探したい
             </div>
+
             <button className='mt-32 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md'>
-              詳細を見る
+              <Link href={"./search"} className='hover:text-brown'>詳細を見る</Link>
             </button>
           </div>
+
           <div className='flex flex-col relative items-center px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
             <div className='absolute -top-12% right-46% lg:right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
               <img src='/tool.svg' alt='Icon' className='w-32' />
