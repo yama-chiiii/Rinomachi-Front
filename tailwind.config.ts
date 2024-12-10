@@ -3,11 +3,18 @@ import type { Config } from "tailwindcss";
 const range = (start: number, end: number): number[] =>
   Array.from({ length: end - start + 1 }, (_, i) => start + i);
 
-const generateSpacing = (): Record<string, string> =>
+const pixelSpacing = (): Record<string, string> =>
   range(1, 800).reduce((acc, i) => {
     acc[i] = `${i}px`;
     return acc;
   }, {} as Record<string, string>);
+
+  const percentSpacing = (): Record<string, string> =>
+    range(1, 100).reduce((acc, i) => {
+      acc[`${i}%`] = `${i}%`;
+      acc[`-${i}%`] = `-${i}%`;
+      return acc;
+    }, {} as Record<string, string>);
 
 export default {
   content: [
@@ -29,12 +36,15 @@ export default {
       },
       spacing: {
         px: "1px",
-        ...generateSpacing(),
+        ...pixelSpacing(),
+        ...percentSpacing(),
       },
       fontFamily: {
         mPlus: ['"M PLUS Rounded 1c"', 'serif'],
       },
       fontSize: {
+        "4xs":"4px",
+        "3xs":"8px",
         xxs: "10px",
         xs: "12px",
         sm: "14px",
@@ -43,12 +53,13 @@ export default {
         xl: "20px",
         "2xl": "24px",
         "3xl": "30px",
-        "4xl": "36px",
-        "5xl": "48px",
-        "6xl": "64px",
-        "7xl": "72px",
-        "8xl": "80px",
-        "9xl": "96px",
+        "4xl": "32px",
+        "5xl": "40px",
+        "6xl": "48px",
+        "7xl": "64px",
+        "8xl": "72px",
+        "9xl": "80px",
+        "10xl":  "96px",
     },
     },
   },
