@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import Header from './component/Header'
 
 export default function Home() {
   return (
     <div className='w-full min-h-screen flex flex-col items-center font-mPlus font-semibold '>
-      <Header />
+
       <div className='w-full lg:w-1/2 min-h-screen flex flex-col items-center bg-brown-light text-red-dark'>
         <div className='mt-164 text-5xl lg:text-6xl text-brown-dark'>
           リノマチ！
