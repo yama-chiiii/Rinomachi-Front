@@ -11,29 +11,29 @@ const Description = () => {
         <div className='-mt-8 lg:-mt-16 mb-12 text-xs lg:text-lg text-brown-dark'>
           ------------------------------------------------------
         </div>
-        <div className='h-auto rounded-md px-16 bg-white'>
+        <div className='lg:w-11/12 w-full h-auto rounded-md bg-white'>
           <div className='mt-44 mx-44 bg-brown-light rounded-md'>
             <div>
-              <div className='mx-24 pt-8 text-lg text-brown-dark'>もくじ</div>
+              <div className='mx-24 pt-16 text-lg text-brown-dark'>もくじ</div>
               <div className='text-brown-dark font-black mx-28 -mt-16 mb-8'>
                 ───
               </div>
             </div>
-            <div className='mx-24 text-brown-dark mb-2 text-xl'>
+            <div className='mx-24 text-brown-dark mb-4 text-xl'>
               〇リノベーションとは
             </div>
             <div className='mx-24 text-brown-dark pb-16 text-xl'>
               〇リノベーションとリフォームの違い
             </div>
           </div>
-          <div className='mx-24 mt-40 text-xl'>〇リノベーションとは</div>
+          <div className='mx-24 mt-40 text-xl text-brown-dark'>〇リノベーションとは…</div>
           <div className='flex justify-center'>
-            <div className='mt-20 border-b-2 border-brown-dark text-xl'>
+            <div className='mt-20 border-b-2 border-brown-dark text-2xl'>
               中古住宅を現代の暮らしに合わせてよみがえらせること
             </div>
           </div>
-          <div className='flex flex-row mt-32 mx-28 text-sm text-brown-dark'>
-            <div>
+          <div className='flex flex-row justify-center mt-32 mx-60 text-sm rounded-md text-brown-dark border-4 border-dashed border-brown'>
+            <div className='my-12'>
               リノベーション（renovation）とは、
               <br />
               既存の建物や空間に対して大規模な改修や改善を行い、
@@ -54,16 +54,16 @@ const Description = () => {
               className='mt-28'
             />
           </div>
-          <div className='mt-52 mx-24 text-xl'>〇リノベーションとリフォームの違い</div>
-          <div className='mt-24 mx-24 text-md text-brown-dark'>日本の建築業界では</div>
-          <div className='mt-8 bg-brown-light rounded-md mx-24 mb-16'>
+          <div className='mt-52 mx-24 text-xl text-brown-dark'>〇リノベーションとリフォームの違い</div>
+          <div className='mt-24 mx-24 pl-24 text-lg text-brown-dark'>日本の建築業界では</div>
+          <div className='mt-8 bg-brown-light rounded-md mx-48 mb-16'>
             <div className='pl-24 py-16 text-brown-dark'>
               老朽化した建築物を新築時に近い状態に戻す「原状回復」を目的とした
               <br />
               改修は「リフォーム」
             </div>
           </div>
-          <div className='mt-8 bg-brown-light rounded-md mx-24'>
+          <div className='mt-8 bg-brown-light rounded-md mx-48'>
             <div className='pl-24 py-16 text-brown-dark'>
               新たに建築物を住まいを作り変えて、性能・間取り・デザインを刷新し、
               <br />
