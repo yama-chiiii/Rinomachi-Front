@@ -4,7 +4,6 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div className='w-full min-h-screen flex flex-col items-center font-mPlus font-semibold '>
-
       <div className='w-full lg:w-1/2 min-h-screen flex flex-col items-center bg-brown-light text-red-dark'>
         <div className='mt-164 text-5xl lg:text-6xl text-brown-dark'>
           リノマチ！
@@ -24,9 +23,7 @@ export default function Home() {
             <br />
             人向け
           </div>
-          <button className='w-full mx-32 py-32 bg-brown text-2xl lg:text-5xl text-white rounded-lg'>
-            リノベーションとは？
-          </button>
+            <Link href={"/description"} className="w-full mx-32 py-32 bg-brown text-2xl lg:text-5xl text-white text-center rounded-lg hover:bg-brown-hover">リノベーションとは？</Link>
         </div>
 
         <div className='w-full mt-60 mb-12 px-60 text-2xl lg:text-4xl text-brown-dark'>
