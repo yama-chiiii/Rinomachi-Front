@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 export default function Header(){
     return(
-        <div className="flex justify-center z-5000000">
-            <div className="w-full lg:w-1/2 flex fixed top-0">
+        <div className="flex justify-center z-50 relative">
+            <div className="w-full lg:w-1/2 flex fixed top-0 bg-brown-light drop-shadow-md">
                 <button type="button" className="top-0 bg-brown-dark flex text-white font-mPlus px-20 py-20 font-bold text-xl">
-                    リノマチ!
+                    <Link href={"/"} >リノマチ！</Link>
                 </button>
                 <div className="flex items-center ml-auto mr-5 ">
                     <div className="ml-10 pt-14">
