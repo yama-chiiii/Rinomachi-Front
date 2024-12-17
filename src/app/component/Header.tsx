@@ -35,7 +35,7 @@ export default function Header(){
                     </div>
                     <div className="ml-10 pt-14">
                         <button type="button" className="pl-3 w-38 h-35">
-                            <Image src="/person.svg" width={36} height={36} alt='Icon'/>
+                            <Image src="/person.svg" width={36} height={36} alt='Icon' />
                         </button>
                         <div className="font-mPlus font-semibold text-xxs">
                             ログイン

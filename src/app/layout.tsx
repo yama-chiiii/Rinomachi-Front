@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import Header from './component/Header'
+import ConditionalHeader from './component/ConditionalHeader'
 import './globals.css'
 
 const geistSans = localFont({
@@ -24,12 +24,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
   return (
     <html lang='en'>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
+        <ConditionalHeader />
         {children}
       </body>
     </html>
