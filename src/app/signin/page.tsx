@@ -1,4 +1,4 @@
-export const Signin = () => {
+export default function Signin() {
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-brown-light font-mPlus font-semibold">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md text-brown-dark">
@@ -43,10 +43,14 @@ export const Signin = () => {
           >
             サインイン
           </button>
+          <button
+            type="submit"
+            className="w-full px-6 py-3 text-brown-dark text-lg font-bold rounded-md hover:bg-brown-700 focus:outline-none focus:ring-2 focus:ring-brown-light"
+          >
+            新規登録
+          </button>
         </div>
       </div>
     </div>
   )
 }
-
-export default Signin
