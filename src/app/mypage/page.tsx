@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export const Mypage = () => {
+export default function Mypage() {
   return (
     <div className='w-full min-h-screen flex flex-col items-center font-mPlus font-semibold '>
       <div className='w-full lg:w-1/2 min-h-screen flex flex-col items-center bg-brown-light text-red-dark'>
@@ -24,5 +24,3 @@ export const Mypage = () => {
     </div>
   )
 }
-
-export default Mypage

@@ -1,4 +1,4 @@
-export const Signup = () => {
+export default function Signup (){
     return (
       <div className="w-full min-h-screen flex items-center justify-center bg-brown-light font-mPlus font-semibold">
         <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md text-brown-dark">
@@ -49,4 +49,4 @@ export const Signup = () => {
     )
   }
 
-  export default Signup
+
