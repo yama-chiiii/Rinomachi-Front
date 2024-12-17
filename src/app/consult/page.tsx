@@ -22,19 +22,46 @@ export const Consult = () => {
             </div>
           </div>
           <div className='flex flex-row-reverse'>
-            <Image src='/fukidasi1.svg' width={280} height={64} alt='Icon' className='mx-48 mt-12' />
+            <Image
+              src='/fukidasi1.svg'
+              width={280}
+              height={64}
+              alt='Icon'
+              className='mx-48 mt-12'
+            />
           </div>
-          <Image src='/fukidasi2.svg' width={280} height={64} alt='Icon' className='mx-48' />
+          <Image
+            src='/fukidasi2.svg'
+            width={280}
+            height={64}
+            alt='Icon'
+            className='mx-48'
+          />
           <div className='my-40 mx-56 px-76 py-16 bg-brown-light text-brown-dark rounded-md'>
-            <div className='text-center'>そんな悩みをお持ちの方は</div><br/><div className='-mt-24 text-center'>下記フォームよりお問い合わせください</div>
+            <div className='text-center'>そんな悩みをお持ちの方は</div>
+            <br />
+            <div className='-mt-24 text-center'>
+              下記フォームよりお問い合わせください
+            </div>
           </div>
         </div>
-        <div className='mt-72 mx-44 text-2xl text-brown-dark'>ご相談・お問い合わせ</div>
+        <div className='mt-72 mx-44 text-2xl text-brown-dark'>
+          ご相談・お問い合わせ
+        </div>
         <div className='mx-44 bg-white'>
-          <div className='flex flex-row items-center mt-72'>
-            <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>必須</div>
-            <div className='ml-16 text-brown-dark text-lg'>お名前</div>
-            <input className='border-brown-dark rouded-md '></input>
+          <div className='w-full h-auto flex flex-row justify-between items-center mt-72 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+                必須
+              </div>
+              <div className='ml-12 text-brown-dark'>お名前</div>
+            </div>
+            <input
+              type='text'
+              id='name'
+              className='py-2 bg-gray-100'
+              placeholder='山田太郎'
+            ></input>
           </div>
           <div className='mt-24'>お名前</div>
           <div className='mt-24'>お名前</div>
