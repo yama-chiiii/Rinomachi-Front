@@ -1,4 +1,4 @@
-// import Link from "next/link";
+import Link from "next/link";
 // import Header from "./../component/Header";
 
 export default function Search() {
@@ -26,7 +26,7 @@ export default function Search() {
                 <ul className="w-full lg:w-1/2">
                   <li className="flex justify-center">
                     <button type="button" className="bg-brown-light border border-brown-dark rounded text-brown-dark font-mPlus font-semibold text-xl w-full lg:w-11/12 py-22 my-10 mx-20 lg:mt-20 ">
-                      <div>路線・駅から探す</div>
+                      <Link href={"./search/line"}>路線・駅から探す</Link>
                     </button>
                   </li>
                   <li className="flex justify-center">
