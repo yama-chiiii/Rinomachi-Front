@@ -132,17 +132,17 @@ export const Consult = () => {
   return (
     <div className='w-full min-h-screen flex flex-col items-center font-mPlus font-semibold'>
       <div className='w-full lg:w-1/2 min-h-screen flex flex-col bg-brown-light text-brown-dark'>
-        <div className='mt-164 mx-44 bg-white'>
-          <div className='w-full pl-52'>
+        <div className='mt-164 lg:mx-44 bg-white'>
+          <div className='w-full items-center lg:pl-52'>
             <div>
-              <div className='w-full h-auto flex flex-row pt-24'>
+              <div className='w-full h-auto items-center flex flex-row pt-24'>
                 <Image
                   src='/person_search_brown.svg'
                   width={44}
                   height={64}
                   alt='Icon'
                 />
-                <div className='text-3xl'>リノベーション経験者に相談</div>
+                <div className='text-xl lg:text-3xl'>リノベーション経験者に相談</div>
               </div>
               <div className='-mt-8 whitespace-nowrap lg:-mt-16 mb-8 text-md lg:text-xl text-brown-dark'>
                 --------------------------------------------------
@@ -165,21 +165,22 @@ export const Consult = () => {
             alt='Icon'
             className='mx-48'
           />
-          <div className='my-40 mx-56 px-76 py-16 bg-brown-light text-brown-dark rounded-md'>
-            <div className='text-center'>そんな悩みをお持ちの方は</div>
+          <div className='my-40 mx-16 lg:mx-72 px-40 py-16 bg-brown-light text-brown-dark rounded-md'>
+            <div className='text-sm lg:text-lg text-center'>そんな悩みをお持ちの方は</div>
             <br />
-            <div className='-mt-24 text-center'>
-              下記フォームよりお問い合わせください
+            <div className='-mt-24 text-sm lg:text-lg text-center'>
+              下記フォームより
             </div>
+            <div className='text-sm lg:text-lg text-center'>お問い合わせください</div>
           </div>
         </div>
         <div className='mt-72 mx-44 text-2xl text-brown-dark'>
           ご相談・お問い合わせ
         </div>
         <div className='mx-44 bg-white'>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-72 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-32 lg:mt-72 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+              <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>お名前</div>
@@ -189,7 +190,7 @@ export const Consult = () => {
               type='text'
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
                 errors.name ? 'border-red-500 border-2' : 'border-gray-300'
               }`}
               placeholder='高専太郎'
@@ -198,9 +199,9 @@ export const Consult = () => {
               <p className='text-sm text-red-500 mt-1'>{errors.name}</p>
             )}
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>フリガナ</div>
@@ -210,7 +211,7 @@ export const Consult = () => {
               type='text'
               value={rubi}
               onChange={(e) => setRubi(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
                 errors.rubi ? 'border-red-500 border-2' : 'border-gray-300'
               }`}
               placeholder='コウセンタロウ'
@@ -219,9 +220,9 @@ export const Consult = () => {
               <p className='text-sm text-red-500 mt-1'>{errors.rubi}</p>
             )}
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>メールアドレス</div>
@@ -231,7 +232,7 @@ export const Consult = () => {
               type='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
                 errors.email ? 'border-red-500 border-2' : 'border-gray-300'
               }`}
               placeholder='1234@gmail.com'
@@ -240,9 +241,9 @@ export const Consult = () => {
               <p className='text-sm text-red-500 mt-1'>{errors.email}</p>
             )}
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>電話番号</div>
@@ -252,7 +253,7 @@ export const Consult = () => {
               type='tel'
               value={tel}
               onChange={(e) => settel(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
                 errors.tel ? 'border-red-500 border-2' : 'border-gray-300'
               }`}
               placeholder='xxx-xxxx-xxxx'
@@ -261,9 +262,9 @@ export const Consult = () => {
               <p className='text-sm text-red-500 mt-1'>{errors.tel}</p>
             )}
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>都道府県</div>
@@ -272,7 +273,7 @@ export const Consult = () => {
               id='prefecture'
               value={prefecture}
               onChange={(e) => setPrefecture(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
                 errors.prefecture
                   ? 'border-red-500 border-2'
                   : 'border-gray-300'
@@ -291,9 +292,9 @@ export const Consult = () => {
               <p className='text-sm text-red-500 mt-1'>{errors.prefecture}</p>
             )}
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>市区町村</div>
@@ -303,7 +304,7 @@ export const Consult = () => {
               type='text'
               value={city}
               onChange={(e) => setCity(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
                 errors.city ? 'border-red-500 border-2' : 'border-gray-300'
               }`}
               placeholder='北九州市小倉南区'
@@ -312,9 +313,9 @@ export const Consult = () => {
               <p className='text-sm text-red-500 mt-1'>{errors.city}</p>
             )}
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>町村・番地</div>
@@ -324,7 +325,7 @@ export const Consult = () => {
               type='text'
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
                 errors.address ? 'border-red-500 border-2' : 'border-gray-300'
               }`}
               placeholder='志井5丁目20-1'
@@ -333,28 +334,28 @@ export const Consult = () => {
               <p className='text-sm text-red-500 mt-1'>{errors.address}</p>
             )}
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-110 text-brown-dark'>ご希望のエリア</div>
+              <div className='ml-12 lg:ml-110 text-brown-dark'>ご希望のエリア</div>
             </div>
             <input
               id='name'
               type='text'
               value={area}
               onChange={(e) => setArea(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${'border-gray-300'}`}
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${'border-gray-300'}`}
               placeholder='小倉北区'
             />
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-110 text-brown-dark'>物件タイプ</div>
+              <div className='ml-12 lg:ml-110 text-brown-dark'>物件タイプ</div>
             </div>
             <select
               id='propertyType'
               value={propertyType}
               onChange={(e) => setPropertyType(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
                 'border-gray-300'
               }`}
             >
@@ -368,29 +369,29 @@ export const Consult = () => {
               ))}
             </select>
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-110 text-brown-dark'>総予算</div>
+              <div className='ml-12 lg:ml-110 text-brown-dark'>総予算</div>
             </div>
             <input
               id='name'
               type='text'
               value={budget}
               onChange={(e) => setBudget(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${'border-gray-300'}`}
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${'border-gray-300'}`}
               placeholder='2500円'
             />
           </div>
-          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24 mb-36'>
-            <div className='flex flex-row items-center'>
-              <div className='ml-110 text-brown-dark'></div>その他
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
+          <div className='flex flex-row items-center'>
+              <div className='ml-12 lg:ml-110 text-brown-dark'></div>その他
             </div>
             <input
               id='name'
               type='text'
               value={otherQuestions}
               onChange={(e) => setOtherQuestions(e.target.value)}
-              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${'border-gray-300'}`}
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100  ${'border-gray-300'}`}
             />
           </div>
         </div>
