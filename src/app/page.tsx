@@ -1,9 +1,9 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
   return (
     <div className='w-full min-h-screen flex flex-col items-center font-mPlus font-semibold '>
-
       <div className='w-full lg:w-1/2 min-h-screen flex flex-col items-center bg-brown-light text-red-dark'>
         <div className='mt-164 text-5xl lg:text-6xl text-brown-dark'>
           リノマチ！
@@ -23,9 +23,7 @@ export default function Home() {
             <br />
             人向け
           </div>
-          <button className='w-full mx-32 py-32 bg-brown text-2xl lg:text-5xl text-white rounded-lg'>
-            リノベーションとは？
-          </button>
+            <Link href={"/description"} className="w-full mx-32 py-32 bg-brown text-2xl lg:text-5xl text-white text-center rounded-lg hover:bg-brown-hover">リノベーションとは？</Link>
         </div>
 
         <div className='w-full mt-60 mb-12 px-60 text-2xl lg:text-4xl text-brown-dark'>
@@ -35,7 +33,7 @@ export default function Home() {
           {/* 空き家 */}
           <div className='flex flex-col relative items-center lg:px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
             <div className='absolute -top-12% right-46% lg:right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
-              <img src='/home.svg' alt='Icon' className='w-32' />
+              <Image src="/home.svg" width={32} height={32} alt='Icon'/>
             </div>
             <div className='mt-52 text-brown-dark text-center text-xl lg:text-base'>
               リノベーション可能な
@@ -50,7 +48,7 @@ export default function Home() {
 
           <div className='flex flex-col relative items-center px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
             <div className='absolute -top-12% right-46% lg:right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
-              <img src='/tool.svg' alt='Icon' className='w-32' />
+              <Image src="/tool.svg" width={32} height={32} alt='Icon'/>
             </div>
             <div className='mt-52 text-brown-dark text-xl lg:text-base text-center'>
               リノベーションされた
@@ -63,7 +61,7 @@ export default function Home() {
           </div>
           <div className='flex flex-col relative items-center px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
             <div className='absolute -top-12% right-46% lg:right-36% px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
-              <img src='/person_search.svg' alt='Icon' className='w-32' />
+              <Image src="/person_search.svg" width={32} height={32} alt='Icon'/>
             </div>
             <div className='mt-52 text-brown-dark text-xl lg:text-base text-center'>
               リノベーションの<br></br>経験者に相談したい

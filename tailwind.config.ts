@@ -27,6 +27,7 @@ export default {
       colors: {
         brown: {
           dark: "#4C1015",
+          hover:"#917549",
           DEFAULT: "#D0AD74",
           light: "#F9F2DF",
         },

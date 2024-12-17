@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Header(){
@@ -10,7 +11,7 @@ export default function Header(){
                 <div className="flex items-center ml-auto mr-5 ">
                     <div className="ml-10 pt-14">
                         <button type="button" className="pl-3 w-38 h-35">
-                            <img src="/watch.svg" alt="Icon"/>
+                            <Image src="/watch.svg" width={36} height={36} alt='Icon'/>
                         </button>
                         <div className="font-mPlus font-semibold text-xxs">
                             最近見た
@@ -18,7 +19,7 @@ export default function Header(){
                     </div>
                     <div className="ml-10 pt-14">
                         <button type="button" className="pl-13 w-48 h-35">
-                            <img src="/description.svg" alt="Icon"/>
+                            <Image src="/description.svg" width={36} height={36} alt='Icon'/>
                         </button>
                         <div className="font-mPlus font-semibold text-xxs">
                             保存した条件
@@ -26,7 +27,7 @@ export default function Header(){
                     </div>
                     <div className="ml-10 pt-14">
                         <button type="button" className="pl-7 w-42 h-35">
-                            <img src="/favorite.svg" alt="Icon"/>
+                            <Image src="/favorite.svg" width={36} height={36} alt='Icon'/>
                         </button>
                         <div className="font-mPlus font-semibold text-xxs">
                             おきにいり
@@ -34,7 +35,7 @@ export default function Header(){
                     </div>
                     <div className="ml-10 pt-14">
                         <button type="button" className="pl-3 w-38 h-35">
-                            <img src="/person.svg" alt="Icon"/>
+                            <Image src="/person.svg" width={36} height={36} alt='Icon'/>
                         </button>
                         <div className="font-mPlus font-semibold text-xxs">
                             ログイン
