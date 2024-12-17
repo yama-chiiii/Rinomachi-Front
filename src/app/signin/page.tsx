@@ -43,6 +43,12 @@ export const Signin = () => {
           >
             サインイン
           </button>
+          <button
+            type="submit"
+            className="w-full px-6 py-3 text-brown-dark text-lg font-bold rounded-md hover:bg-brown-700 focus:outline-none focus:ring-2 focus:ring-brown-light"
+          >
+            新規登録
+          </button>
         </div>
       </div>
     </div>

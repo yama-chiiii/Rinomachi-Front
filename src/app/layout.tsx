@@ -25,8 +25,6 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
 
-  const hideHeaderPaths = ['/signin', '/login'] // Headerを非表示にするページのリスト
-
   return (
     <html lang='en'>
       <body
