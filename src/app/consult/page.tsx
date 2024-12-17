@@ -76,7 +76,13 @@ export const Consult = () => {
     '沖縄県',
   ]
 
-  const propertyTypeOptions = ['一軒家', 'マンション', 'アパート', 'オフィス','その他']
+  const propertyTypeOptions = [
+    '一軒家',
+    'マンション',
+    'アパート',
+    'オフィス',
+    'その他',
+  ]
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -142,7 +148,9 @@ export const Consult = () => {
                   height={64}
                   alt='Icon'
                 />
-                <div className='text-xl lg:text-3xl'>リノベーション経験者に相談</div>
+                <div className='text-xl lg:text-3xl'>
+                  リノベーション経験者に相談
+                </div>
               </div>
               <div className='-mt-8 whitespace-nowrap lg:-mt-16 mb-8 text-md lg:text-xl text-brown-dark'>
                 --------------------------------------------------
@@ -166,18 +174,22 @@ export const Consult = () => {
             className='mx-48'
           />
           <div className='my-40 mx-16 lg:mx-72 px-40 py-16 bg-brown-light text-brown-dark rounded-md'>
-            <div className='text-sm lg:text-lg text-center'>そんな悩みをお持ちの方は</div>
+            <div className='text-sm lg:text-lg text-center'>
+              そんな悩みをお持ちの方は
+            </div>
             <br />
             <div className='-mt-24 text-sm lg:text-lg text-center'>
               下記フォームより
             </div>
-            <div className='text-sm lg:text-lg text-center'>お問い合わせください</div>
+            <div className='text-sm lg:text-lg text-center'>
+              お問い合わせください
+            </div>
           </div>
         </div>
         <div className='mt-72 mx-44 text-2xl text-brown-dark'>
           ご相談・お問い合わせ
         </div>
-        <div className='mx-44 bg-white'>
+        <div className='mx-24 lg:mx-44 bg-white'>
           <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-32 lg:mt-72 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
               <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
@@ -201,7 +213,7 @@ export const Consult = () => {
           </div>
           <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
+              <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>フリガナ</div>
@@ -222,7 +234,7 @@ export const Consult = () => {
           </div>
           <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
+              <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>メールアドレス</div>
@@ -243,7 +255,7 @@ export const Consult = () => {
           </div>
           <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
+              <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>電話番号</div>
@@ -264,7 +276,7 @@ export const Consult = () => {
           </div>
           <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
+              <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>都道府県</div>
@@ -294,7 +306,7 @@ export const Consult = () => {
           </div>
           <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
+              <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>市区町村</div>
@@ -315,7 +327,7 @@ export const Consult = () => {
           </div>
           <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-            <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
+              <div className='ml-12 lg:ml-44 text-3xs lg:text-xs bg-red-dark text-white px-4 lg:px-16 py-4 lg:py-8 rounded-full'>
                 必須
               </div>
               <div className='ml-12 text-brown-dark'>町村・番地</div>
@@ -336,7 +348,9 @@ export const Consult = () => {
           </div>
           <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
             <div className='flex flex-row items-center'>
-              <div className='ml-12 lg:ml-110 text-brown-dark'>ご希望のエリア</div>
+              <div className='ml-12 lg:ml-110 text-brown-dark'>
+                ご希望のエリア
+              </div>
             </div>
             <input
               id='name'
@@ -355,9 +369,7 @@ export const Consult = () => {
               id='propertyType'
               value={propertyType}
               onChange={(e) => setPropertyType(e.target.value)}
-              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
-                'border-gray-300'
-              }`}
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${'border-gray-300'}`}
             >
               <option value='' disabled>
                 選択してください
@@ -382,23 +394,24 @@ export const Consult = () => {
               placeholder='2500円'
             />
           </div>
-          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-center mt-24 mx-2 lg:mx-24'>
-          <div className='flex flex-row items-center'>
-              <div className='ml-12 lg:ml-110 text-brown-dark'></div>その他
+          <div className='w-full lg:w-4/5 h-auto flex flex-col lg:flex-row lg:justify-between lg:items-start mt-24 mx-2 lg:mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-12 lg:ml-110 text-brown-dark'>その他</div>
             </div>
-            <input
-              id='name'
-              type='text'
+            <textarea
+              id='otherQuestions'
               value={otherQuestions}
               onChange={(e) => setOtherQuestions(e.target.value)}
-              className={`w-5/6 lg:w-1/2 ml-12 mt-8 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100  ${'border-gray-300'}`}
+              rows={5} // 5行分の高さを指定
+              className={`w-5/6 lg:w-1/2 ml-12 mt-8 mb-40 lg:mt-0 lg:ml-0 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 border-gray-300`}
+              placeholder='ご自由にご記入ください..'
             />
           </div>
         </div>
         <div className='flex justify-center'>
           <button
             onClick={handleSubmit}
-            className='w-1/5 py-3 rounded-md bg-brown-dark text-white hover:opacity-80 mt-48'
+            className='w-1/5 py-12 mb-12 rounded-md bg-brown-dark text-white hover:opacity-80 mt-48'
           >
             送信
           </button>
