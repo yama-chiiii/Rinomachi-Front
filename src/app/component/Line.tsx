@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+// import Link from "next/link";
 import {useState} from 'react';
 
 function CheckBox({name,id,setIsChecked}:{name:string,id:string,setIsChecked:() => void}){
