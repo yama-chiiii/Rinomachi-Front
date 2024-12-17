@@ -1,6 +1,134 @@
+'use client'
+
 import Image from 'next/image'
+import { useState } from 'react'
 
 export const Consult = () => {
+  const [name, setName] = useState('') // 名前
+  const [rubi, setRubi] = useState('') //フリガナ
+  const [email, setEmail] = useState('') // メールアドレス
+  const [tel, settel] = useState('') //電話番号
+  const [prefecture, setPrefecture] = useState('') // 都道府県
+  const [city, setCity] = useState('') // 市区町村
+  const [address, setAddress] = useState('') // 番地
+  const [area, setArea] = useState('') // ご希望のエリア
+  const [propertyType, setPropertyType] = useState('') // 物件タイプ
+  const [budget, setBudget] = useState('') // 総予算
+  const [otherQuestions, setOtherQuestions] = useState('') // その他質問
+
+  const [errors, setErrors] = useState({
+    name: '',
+    rubi: '',
+    email: '',
+    tel: '',
+    prefecture: '',
+    city: '',
+    address: '',
+  })
+
+  const prefectures = [
+    '北海道',
+    '青森県',
+    '岩手県',
+    '宮城県',
+    '秋田県',
+    '山形県',
+    '福島県',
+    '茨城県',
+    '栃木県',
+    '群馬県',
+    '埼玉県',
+    '千葉県',
+    '東京都',
+    '神奈川県',
+    '新潟県',
+    '富山県',
+    '石川県',
+    '福井県',
+    '山梨県',
+    '長野県',
+    '岐阜県',
+    '静岡県',
+    '愛知県',
+    '三重県',
+    '滋賀県',
+    '京都府',
+    '大阪府',
+    '兵庫県',
+    '奈良県',
+    '和歌山県',
+    '鳥取県',
+    '島根県',
+    '岡山県',
+    '広島県',
+    '山口県',
+    '徳島県',
+    '香川県',
+    '愛媛県',
+    '高知県',
+    '福岡県',
+    '佐賀県',
+    '長崎県',
+    '熊本県',
+    '大分県',
+    '宮崎県',
+    '鹿児島県',
+    '沖縄県',
+  ]
+
+  const propertyTypeOptions = ['一軒家', 'マンション', 'アパート', 'オフィス','その他']
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    let valid = true
+
+    const newErrors = {
+      name: '',
+      rubi: '',
+      email: '',
+      tel: '',
+      prefecture: '',
+      city: '',
+      address: '',
+    }
+
+    if (name.trim() === '') {
+      newErrors.name = '名前を入力してください。'
+      valid = false
+    }
+    if (rubi.trim() === '') {
+      newErrors.rubi = 'フリガナを入力してください。'
+      valid = false
+    }
+    if (email.trim() === '') {
+      newErrors.email = 'メールアドレスを入力してください。'
+      valid = false
+    }
+    if (tel.trim() === '') {
+      newErrors.tel = '電話番号を入力してください。'
+      valid = false
+    }
+    if (!prefecture) {
+      newErrors.prefecture = '都道府県を選択してください。'
+      valid = false
+    }
+    if (city.trim() === '') {
+      newErrors.city = '市区町村を入力してください。'
+      valid = false
+    }
+    if (address.trim() === '') {
+      newErrors.address = '番地を入力してください。'
+      valid = false
+    }
+
+    setErrors(newErrors)
+
+    if (valid) {
+      console.log('Form Submitted:', { name, email })
+      alert('フォームが送信されました！')
+    }
+  }
+
   return (
     <div className='w-full min-h-screen flex flex-col items-center font-mPlus font-semibold'>
       <div className='w-full lg:w-1/2 min-h-screen flex flex-col bg-brown-light text-brown-dark'>
@@ -49,7 +177,7 @@ export const Consult = () => {
           ご相談・お問い合わせ
         </div>
         <div className='mx-44 bg-white'>
-          <div className='w-full h-auto flex flex-row justify-between items-center mt-72 mx-24'>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-72 mx-24'>
             <div className='flex flex-row items-center'>
               <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
                 必須
@@ -57,22 +185,222 @@ export const Consult = () => {
               <div className='ml-12 text-brown-dark'>お名前</div>
             </div>
             <input
-              type='text'
               id='name'
-              className='py-2 bg-gray-100'
-              placeholder='山田太郎'
-            ></input>
+              type='text'
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+                errors.name ? 'border-red-500 border-2' : 'border-gray-300'
+              }`}
+              placeholder='高専太郎'
+            />
+            {errors.name && (
+              <p className='text-sm text-red-500 mt-1'>{errors.name}</p>
+            )}
           </div>
-          <div className='mt-24'>お名前</div>
-          <div className='mt-24'>お名前</div>
-          <div className='mt-24'>お名前</div>
-          <div className='mt-24'>お名前</div>
-          <div className='mt-24'>お名前</div>
-          <div className='mt-24'>お名前</div>
-          <div className='mt-24'>お名前</div>
-          <div className='mt-24'>お名前</div>
-          <div className='mt-24'>お名前</div>
-          <div className='mt-24'>お名前</div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+                必須
+              </div>
+              <div className='ml-12 text-brown-dark'>フリガナ</div>
+            </div>
+            <input
+              id='name'
+              type='text'
+              value={rubi}
+              onChange={(e) => setRubi(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+                errors.rubi ? 'border-red-500 border-2' : 'border-gray-300'
+              }`}
+              placeholder='コウセンタロウ'
+            />
+            {errors.rubi && (
+              <p className='text-sm text-red-500 mt-1'>{errors.rubi}</p>
+            )}
+          </div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+                必須
+              </div>
+              <div className='ml-12 text-brown-dark'>メールアドレス</div>
+            </div>
+            <input
+              id='email'
+              type='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+                errors.email ? 'border-red-500 border-2' : 'border-gray-300'
+              }`}
+              placeholder='1234@gmail.com'
+            />
+            {errors.email && (
+              <p className='text-sm text-red-500 mt-1'>{errors.email}</p>
+            )}
+          </div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+                必須
+              </div>
+              <div className='ml-12 text-brown-dark'>電話番号</div>
+            </div>
+            <input
+              id='tel'
+              type='tel'
+              value={tel}
+              onChange={(e) => settel(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+                errors.tel ? 'border-red-500 border-2' : 'border-gray-300'
+              }`}
+              placeholder='xxx-xxxx-xxxx'
+            />
+            {errors.tel && (
+              <p className='text-sm text-red-500 mt-1'>{errors.tel}</p>
+            )}
+          </div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+                必須
+              </div>
+              <div className='ml-12 text-brown-dark'>都道府県</div>
+            </div>
+            <select
+              id='prefecture'
+              value={prefecture}
+              onChange={(e) => setPrefecture(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+                errors.prefecture
+                  ? 'border-red-500 border-2'
+                  : 'border-gray-300'
+              }`}
+            >
+              <option value='' disabled>
+                選択してください
+              </option>
+              {prefectures.map((pref, index) => (
+                <option key={index} value={pref}>
+                  {pref}
+                </option>
+              ))}
+            </select>
+            {errors.prefecture && (
+              <p className='text-sm text-red-500 mt-1'>{errors.prefecture}</p>
+            )}
+          </div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+                必須
+              </div>
+              <div className='ml-12 text-brown-dark'>市区町村</div>
+            </div>
+            <input
+              id='name'
+              type='text'
+              value={city}
+              onChange={(e) => setCity(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+                errors.city ? 'border-red-500 border-2' : 'border-gray-300'
+              }`}
+              placeholder='北九州市小倉南区'
+            />
+            {errors.city && (
+              <p className='text-sm text-red-500 mt-1'>{errors.city}</p>
+            )}
+          </div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-44 text-xs bg-red-dark text-white px-16 py-8 rounded-full'>
+                必須
+              </div>
+              <div className='ml-12 text-brown-dark'>町村・番地</div>
+            </div>
+            <input
+              id='name'
+              type='text'
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+                errors.address ? 'border-red-500 border-2' : 'border-gray-300'
+              }`}
+              placeholder='志井5丁目20-1'
+            />
+            {errors.address && (
+              <p className='text-sm text-red-500 mt-1'>{errors.address}</p>
+            )}
+          </div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-110 text-brown-dark'>ご希望のエリア</div>
+            </div>
+            <input
+              id='name'
+              type='text'
+              value={area}
+              onChange={(e) => setArea(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${'border-gray-300'}`}
+              placeholder='小倉北区'
+            />
+          </div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-110 text-brown-dark'>物件タイプ</div>
+            </div>
+            <select
+              id='propertyType'
+              value={propertyType}
+              onChange={(e) => setPropertyType(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${
+                'border-gray-300'
+              }`}
+            >
+              <option value='' disabled>
+                選択してください
+              </option>
+              {propertyTypeOptions.map((type, index) => (
+                <option key={index} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-110 text-brown-dark'>総予算</div>
+            </div>
+            <input
+              id='name'
+              type='text'
+              value={budget}
+              onChange={(e) => setBudget(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${'border-gray-300'}`}
+              placeholder='2500円'
+            />
+          </div>
+          <div className='w-4/5 h-auto flex flex-row justify-between items-center mt-24 mx-24 mb-36'>
+            <div className='flex flex-row items-center'>
+              <div className='ml-110 text-brown-dark'></div>その他
+            </div>
+            <input
+              id='name'
+              type='text'
+              value={otherQuestions}
+              onChange={(e) => setOtherQuestions(e.target.value)}
+              className={`w-1/2 px-4 py-2 rounded-md focus:ring-2 focus:ring-brown-dark bg-gray-100 ${'border-gray-300'}`}
+            />
+          </div>
+        </div>
+        <div className='flex justify-center'>
+          <button
+            onClick={handleSubmit}
+            className='w-1/5 py-3 rounded-md bg-brown-dark text-white hover:opacity-80 mt-48'
+          >
+            送信
+          </button>
         </div>
       </div>
     </div>
