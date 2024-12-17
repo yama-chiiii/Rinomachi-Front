@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import Header from './component/Header'
+import ConditionalHeader from './component/ConditionalHeader'
 import './globals.css'
 
 const geistSans = localFont({
@@ -24,12 +24,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
+  const hideHeaderPaths = ['/signin', '/login'] // Headerを非表示にするページのリスト
+
   return (
-    <html lang="en">
-      <Header />
+    <html lang='en'>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ConditionalHeader />
         {children}
       </body>
     </html>
