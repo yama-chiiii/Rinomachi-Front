@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 
-export const Consult = () => {
+export default function Consult() {
   const [name, setName] = useState('') // 名前
   const [rubi, setRubi] = useState('') //フリガナ
   const [email, setEmail] = useState('') // メールアドレス
@@ -420,5 +420,3 @@ export const Consult = () => {
     </div>
   )
 }
-
-export default Consult
