@@ -1,4 +1,4 @@
-// import Link from "next/link";
+import Link from "next/link";
 // import Header from "./../component/Header";
 import Image from "next/image";
 
@@ -27,12 +27,12 @@ export default function Search() {
                 <ul className="w-full lg:w-1/2">
                   <li className="flex justify-center">
                     <button type="button" className="bg-brown-light border border-brown-dark rounded text-brown-dark font-mPlus font-semibold text-xl w-full lg:w-11/12 py-22 my-10 mx-20 lg:mt-20 ">
-                      <div>路線・駅から探す</div>
+                      <Link href={"./search/searchline"}>路線・駅から探す</Link>
                     </button>
                   </li>
                   <li className="flex justify-center">
                     <button type="button" className="bg-brown-light border border-brown-dark rounded text-brown-dark font-mPlus font-semibold text-xl w-full lg:w-11/12 py-22 my-10 mx-20 lg:mt-10">
-                      <div>相場価格から探す</div>
+                      <Link href={"./search/searchprice"}>相場価格から探す</Link>
                     </button>
                   </li>
                   <li className="flex justify-center">
@@ -51,14 +51,14 @@ export default function Search() {
                   <div className="my-10">リノベーション事例</div>
                   <div className="text-xxs">これまでにリノベーションされた<br/>建物の一例を紹介！</div>
                   <div className="w-auto h-auto flex justify-end z-10">
-                    <Image src="/house.svg" alt="Icon" className="w-35 h-35 lg:w-45 lg:h-45"/>
+                    <Image src="/house.svg" height={200} width={200} alt="Icon" className="w-35 h-35 lg:w-45 lg:h-45"/>
                   </div>
                 </div>
                 <div className="flex flex-col justify-center text-center bg-white rounded text-sm w-5/12 h-auto ml-10 mr-30">
                   <div className="my-10">経験者に相談</div>
                   <div className="text-xxs">リノベーション経験者の話を<br/>聞くならココ！</div>
                   <div className="w-auto h-auto flex justify-end z-10">
-                    <Image src="/forum.svg" alt="Icon" className="w-35 h-35 lg:w-45 lg:h-45"/>
+                    <Image src="/forum.svg" alt="Icon" height={200} width={200} className="w-35 h-35 lg:w-45 lg:h-45"/>
                   </div>
                 </div>
               </div>
