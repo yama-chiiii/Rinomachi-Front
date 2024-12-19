@@ -9,7 +9,8 @@ export default function houseList() {
           <div className="text-md lg:text-2xl text-dark-brown">選択条件の表示</div>
         </div>
         <div className="w-full lg:w-11/12 mt-32 bg-white">
-          <House/>
+          <House housetype="賃貸" name="住宅A" />
+          <House housetype="売買" name="住宅B" />
         </div>
       </div>
     </div>

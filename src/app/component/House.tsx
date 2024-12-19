@@ -1,17 +1,26 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-export default function House() {
+type HouseProps = {
+  housetype: '賃貸' | '売買';
+  name: string;
+}
+
+export default function House({ housetype,name}: HouseProps) {
   return (
-    <div className='w-full min-h-screen font-mPlus font-semibold'>
+    <div className='w-full h-auto font-mPlus font-semibold'>
       <div className='w-full flex flex-col lg:flex-row justify-center bg-white mt-32 text-brown-dark'>
         {/* 左半分 */}
         <div className='flex flex-col justify-start mx-12'>
           <div className='flex flex-row items-center mt-20'>
             {/* タグ */}
-            <div className='px-4 lg:px-8 py-2 rounded-md bg-green-light text-white text-xs lg:text-md '>
-              賃貸
+            <div
+              className={`px-4 lg:px-8 py-2 rounded-md text-white text-xs lg:text-md ${
+                housetype === '賃貸' ? 'bg-green-light' : 'bg-orange'
+              }`}
+            >
+              {housetype}
             </div>
-            <div className='px-8 text-md lg:text-xl'>住宅A</div>
+            <div className='px-8 text-md lg:text-xl'>{name}</div>
           </div>
           <Image
             src='/houseEX_1.svg'
@@ -24,7 +33,7 @@ export default function House() {
         {/* →半分 */}
         <div className='flex flex-col mx-8 lg:mx-12 mt-24 lg:mt-60'>
           {/* 所在地 */}
-          <div className='flex flex-col -ml-6 lg:-ml-0  lg:flex-row lg:items-center items-start'>
+          <div className='flex flex-col -ml-6 lg:-ml-0 lg:flex-row lg:items-center items-start'>
             <div className='mx-8 px-8 py-4 rounded-md text-xs lg:text-md border-2 border-brown text-brown-dark bg-brown-light'>
               所在地
             </div>
@@ -36,7 +45,7 @@ export default function House() {
             <div className='mx-8 px-8 py-4 rounded-md text-xs lg:text-md border-2 border-brown text-brown-dark bg-brown-light'>
               最寄駅
             </div>
-            <div className='mt-4 lg:mt-0 mx-12 lg:mx-0 text-brown-dark  text-xs lg:text-lg'>
+            <div className='mt-4 lg:mt-0 mx-12 lg:mx-0 text-brown-dark text-xs lg:text-lg'>
               モノレール志井　徒歩10分
             </div>
           </div>
@@ -69,6 +78,7 @@ export default function House() {
           </table>
         </div>
       </div>
+      <div className='mx-12 lg:mx-32 mt-40 border-2 border-gray-200'></div>
     </div>
-  )
+  );
 }
