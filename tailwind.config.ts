@@ -34,6 +34,12 @@ export default {
         red: {
           dark: "#861D47",
         },
+        green: {
+          light: "#ACBD6F",
+        },
+        orange: {
+          DEFAULT: "#DA9128",
+        },
       },
       spacing: {
         px: "1px",
