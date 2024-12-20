@@ -21,9 +21,9 @@ function CheckBox({name,id,setIsChecked}:{name:string,id:string,setIsChecked:() 
     );
 }
 
-function LineCheckBox({name,id,setIsChecked,setLine}:{name:string,id:string,setIsChecked:() => void,setLine:() => void}){
+function LineCheckBox({name,id,setIsChecked,/*setLine*/}:{name:string,id:string,setIsChecked:() => void/*,setLine:() => void*/}){
     const handleChange = () => {
-        setLine();
+        // setLine();
         setIsChecked();
     };
     return(
@@ -45,7 +45,7 @@ function LineCheckBox({name,id,setIsChecked,setLine}:{name:string,id:string,setI
 
 export default function Line(){
     const [isChecked,setIsChecked] = useState(false);
-    const [line,setLine] = useState("JQ");
+    // const [line,setLine] = useState("JQ");
 
     return(
         <>
@@ -58,14 +58,14 @@ export default function Line(){
                         <div className="flex w-full h-auto">
                             <div className="flex-col text-xl">
                                 <div>
-                                    <div className="ml-20 mt-15 mb-5"><LineCheckBox name="鹿児島本線" id="鹿児島本線" setIsChecked={() => setIsChecked(!isChecked)} setLine={() => setLine("鹿児島本線")}/></div>
+                                    {<div className="ml-20 mt-15 mb-5"><LineCheckBox name="鹿児島本線" id="鹿児島本線" setIsChecked={() => setIsChecked(!isChecked)} /* setLine={() => setLine("鹿児島本線")}*//></div> }
                                     <div className="flex flex-wrap gap-5 ml-45">
                                         <CheckBox name="小倉" id="鹿児島本線" setIsChecked={() => setIsChecked(!isChecked)}/>
                                         <CheckBox name="西小倉" id="鹿児島本線" setIsChecked={() => setIsChecked(!isChecked)}/>
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="ml-20 mt-15 mb-5"><LineCheckBox name="日豊本線" id="日豊本線" setIsChecked={() => setIsChecked(!isChecked)} setLine={() => setLine("日豊本線")}/></div>
+                                    <div className="ml-20 mt-15 mb-5"><LineCheckBox name="日豊本線" id="日豊本線" setIsChecked={() => setIsChecked(!isChecked)} /*setLine={() => setLine("日豊本線")}*//></div>
                                     <div className="flex flex-wrap gap-5 ml-45">
                                         <CheckBox name="小倉" id="日豊本線" setIsChecked={() => setIsChecked(!isChecked)}/>
                                         <CheckBox name="西小倉" id="日豊本線" setIsChecked={() => setIsChecked(!isChecked)}/>
@@ -78,7 +78,7 @@ export default function Line(){
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="ml-20 mt-15 mb-5"><LineCheckBox name="北九州モノレール" id="北九州モノレール" setIsChecked={() => setIsChecked(!isChecked)} setLine={() => setLine("北九州モノレール")}/></div>
+                                    <div className="ml-20 mt-15 mb-5"><LineCheckBox name="北九州モノレール" id="北九州モノレール" setIsChecked={() => setIsChecked(!isChecked)} /*setLine={() => setLine("北九州モノレール")}*//></div>
                                     <div className="flex flex-wrap gap-5 ml-45">
                                         <CheckBox name="小倉" id="北九州モノレール" setIsChecked={() => setIsChecked(!isChecked)}/>
                                         <CheckBox name="平和通" id="北九州モノレール" setIsChecked={() => setIsChecked(!isChecked)}/>
