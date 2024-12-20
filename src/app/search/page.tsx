@@ -50,15 +50,19 @@ export default function Search() {
                 <div className="flex flex-col justify-center text-center bg-white rounded text-sm w-5/12 h-auto ml-30">
                   <div className="my-10">リノベーション事例</div>
                   <div className="text-xxs">これまでにリノベーションされた<br/>建物の一例を紹介！</div>
-                  <div className="w-auto h-auto flex justify-end z-10">
-                    <Image src="/house.svg" alt="Icon" className="w-35 h-35 lg:w-45 lg:h-45"/>
+                  <div className="flex justify-end z-10">
+                    <div className="relative w-35 h-35 lg:w-45 lg:h-45">
+                      <Image src="/house.svg" alt="Icon" fill className="object-contain"/>
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-col justify-center text-center bg-white rounded text-sm w-5/12 h-auto ml-10 mr-30">
                   <div className="my-10">経験者に相談</div>
                   <div className="text-xxs">リノベーション経験者の話を<br/>聞くならココ！</div>
-                  <div className="w-auto h-auto flex justify-end z-10">
-                    <Image src="/forum.svg" alt="Icon" className="w-35 h-35 lg:w-45 lg:h-45"/>
+                  <div className="flex justify-end z-10">
+                    <div className="relative w-35 h-35 lg:w-45 lg:h-45">
+                      <Image src="/forum.svg" alt="Icon" fill className="object-contain"/>
+                    </div>
                   </div>
                 </div>
               </div>
