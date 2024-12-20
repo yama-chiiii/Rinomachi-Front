@@ -10,6 +10,7 @@ export default function Search() {
             <div className="bg-white rounded mt-120 mb-20 mx-30">
               <div className="flex border-b border-dashed border-brown-dark w-205 pt-20 ml-20">
                 <Image src="/search.svg" alt="Icon" height={35} width={35} />
+
                 <div className="font-mPlus text-brown-dark">エリアから探す</div>
               </div>
               <div className="lg:flex z-30">
@@ -19,6 +20,7 @@ export default function Search() {
                   </button>
                   <div className="flex justify-center w-full h-auto">
                     <Image src="/kokura.svg" alt="map" height={200} width={200} className="my-10 lg:mx-70"/>
+
                   </div>
                   <button type="button" className="flex rounded-full bg-brown font-mPlus font-semibold text-white text-sm justify-center items-center w-69 h-69 p-20 absolute bottom-10 right-10">
                     小倉南区
@@ -39,6 +41,7 @@ export default function Search() {
                     <button type="button" className="bg-brown-light border border-brown-dark rounded text-brown-dark font-mPlus font-semibold text-xl w-full lg:w-11/12 py-22 my-10 mb-20 mx-20 lg:mt-9">
                       <div>詳細検索</div>
                     </button>
+
                   </li>
                 </ul>
               </div>
