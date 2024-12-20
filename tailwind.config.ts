@@ -48,6 +48,7 @@ export default {
       },
       fontFamily: {
         mPlus: ['"M PLUS Rounded 1c"', 'serif'],
+        hachi: [ "Hachi Maru Pop", "serif"],
       },
       fontSize: {
         "4xs":"4px",
