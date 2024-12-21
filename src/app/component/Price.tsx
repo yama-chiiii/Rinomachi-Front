@@ -1,107 +1,110 @@
 'use client'
-import { useState } from 'react'
+
+import { useEffect, useState } from 'react'
+
+type PriceProps = {
+  onConditionChange: (condition: string, checked: boolean) => void
+}
 
 function CheckBox({
   name,
-  id,
-  setIsChecked,
+  isChecked,
+  toggleCheck,
+  isBold = false,
 }: {
   name: string
-  id: string
-  setIsChecked: () => void
+  isChecked: boolean
+  isBold?: boolean
+  toggleCheck: (name: string, checked: boolean) => void
 }) {
-  const handleChange = () => {
-    setIsChecked()
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    toggleCheck(name, event.target.checked)
   }
+
   return (
-    <div className='flex items-center space-x-3'>
+    <div className='flex items-center ml-12'>
       <input
         type='checkbox'
-        id={id}
+        checked={isChecked}
         onChange={handleChange}
-        className='w-15 h-15 text-blue-500 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2'
+        className='w-16 h-16 text-brown-dark bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2'
       />
-      <label htmlFor='checkbox' className='text-gray-700 font-medium'>
+      <label
+        className={`ml-3 text-dark-brown text-sm lg:text-xl ${
+          isBold ? 'font-bold' : 'font-medium'
+        }`}
+      >
         {name}
       </label>
     </div>
   )
 }
 
-export default function Price() {
-  const [isChecked, setIsChecked] = useState(false)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [line, setLine] = useState('JQ')
+export default function Price({ onConditionChange }: PriceProps) {
+  const groups = {
+    価格帯: [
+      '〜10万',
+      '10〜50万',
+      '50〜100万',
+      '100〜500万',
+      '500〜1000万',
+      '1000〜3000万',
+      '3000〜5000万',
+      '5000〜1億',
+    ],
+    タイプ: ['賃貸のみ', '借家のみ'],
+  } as const
+
+  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({})
+  const [pendingUpdates, setPendingUpdates] = useState<
+    { name: string; checked: boolean }[]
+  >([])
+
+  const toggleCheck = (name: string, checked: boolean) => {
+    setCheckedItems((prev) => {
+      const newState = { ...prev, [name]: checked }
+      setPendingUpdates((updates) => [...updates, { name, checked }]) // 非同期で処理
+      return newState
+    })
+  }
+
+  useEffect(() => {
+    if (pendingUpdates.length > 0) {
+      const updates = [...pendingUpdates]
+      setPendingUpdates([])
+      updates.forEach(({ name, checked }) => onConditionChange(name, checked))
+    }
+  }, [pendingUpdates, onConditionChange])
 
   return (
-    <>
-      <div className='w-full mb-32 flex flex-col mx-auto font-mPlus font-semibold text-2xl'>
-        <div className='w-full h-full bg-brown-light text-red-dark'>
-          <div className='bg-white rounded mb-20 mx-30 pr-15 pb-20'>
-            <div className='flex border-b border-dashed border-brown-dark w-205 pt-20 ml-20'>
-              <div className='font-mPlus text-brown-dark'>価格相場から探す</div>
-            </div>
-            <div className='flex w-full h-auto'>
-              <div className='flex-col text-xl'>
-                <div className='flex flex-wrap gap-10 mt-15 ml-20 pb-10 border-b border-dashed border-brown-dark'>
+    <div className='w-full flex flex-col mx-auto mb-32 font-mPlus font-semibold text-2xl'>
+      <div className='w-full h-full bg-brown-light text-brown-dark'>
+        <div className='bg-white rounded mt-12 mb-20 mx-30 pr-15 pb-20'>
+          <div className='flex border-b border-dashed border-brown-dark w-205 mb-12 pt-20 ml-20'>
+            <div className='font-mPlus text-brown-dark'>価格相場から探す</div>
+          </div>
+          {Object.entries(groups).map(([group, items]) => (
+            <div key={group} className='mb-12'>
+              <div className='mb-4 ml-8'>
+                <label className='text-dark-brown font-bold text-lg'>
+                  {group}
+                </label>
+              </div>
+
+              <div className='flex flex-wrap gap-4 ml-16 mb-12'>
+                {items.map((item) => (
                   <CheckBox
-                    name='〜10万'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
+                    key={item}
+                    name={item}
+                    isChecked={!!checkedItems[item]}
+                    toggleCheck={toggleCheck}
                   />
-                  <CheckBox
-                    name='10〜50万'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
-                  />
-                  <CheckBox
-                    name='50〜100万'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
-                  />
-                  <CheckBox
-                    name='100〜500万'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
-                  />
-                  <CheckBox
-                    name='500〜1000万'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
-                  />
-                  <CheckBox
-                    name='1000〜3000万'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
-                  />
-                  <CheckBox
-                    name='3000〜5000万'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
-                  />
-                  <CheckBox
-                    name='5000〜1億'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
-                  />
-                </div>
-                <div className='flex flex-wrap gap-5 mt-15 ml-20'>
-                  <CheckBox
-                    name='賃貸のみ'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
-                  />
-                  <CheckBox
-                    name='借家のみ'
-                    id='price'
-                    setIsChecked={() => setIsChecked(!isChecked)}
-                  />
-                </div>
+                ))}
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
