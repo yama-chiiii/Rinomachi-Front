@@ -29,7 +29,7 @@ export default function Search() {
                 <ul className="w-full lg:w-1/2">
                   <li className="flex justify-center">
                     <button type="button" className="bg-brown-light border border-brown-dark rounded text-brown-dark font-mPlus font-semibold text-xl w-full lg:w-11/12 py-22 my-10 mx-20 lg:mt-20 ">
-                      <Link href={"./search/line"}>路線・駅から探す</Link>
+                      <Link href={"./search/searchline"}>路線・駅から探す</Link>
                     </button>
                   </li>
                   <li className="flex justify-center">
