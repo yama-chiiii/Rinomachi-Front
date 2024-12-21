@@ -10,6 +10,7 @@ export default function Search() {
             <div className="bg-white rounded mt-120 mb-20 mx-30">
               <div className="flex border-b border-dashed border-brown-dark w-205 pt-20 ml-20">
                 <Image src="/search.svg" alt="Icon" height={35} width={35} />
+
                 <div className="font-mPlus text-brown-dark">エリアから探す</div>
               </div>
               <div className="lg:flex z-30">
@@ -19,6 +20,7 @@ export default function Search() {
                   </button>
                   <div className="flex justify-center w-full h-auto">
                     <Image src="/kokura.svg" alt="map" height={200} width={200} className="my-10 lg:mx-70"/>
+
                   </div>
                   <button type="button" className="flex rounded-full bg-brown font-mPlus font-semibold text-white text-sm justify-center items-center w-69 h-69 p-20 absolute bottom-10 right-10">
                     小倉南区
@@ -27,7 +29,7 @@ export default function Search() {
                 <ul className="w-full lg:w-1/2">
                   <li className="flex justify-center">
                     <button type="button" className="bg-brown-light border border-brown-dark rounded text-brown-dark font-mPlus font-semibold text-xl w-full lg:w-11/12 py-22 my-10 mx-20 lg:mt-20 ">
-                      <Link href={"./search/searchline"}>路線・駅から探す</Link>
+                      <Link href={"./search/line"}>路線・駅から探す</Link>
                     </button>
                   </li>
                   <li className="flex justify-center">
@@ -39,6 +41,7 @@ export default function Search() {
                     <button type="button" className="bg-brown-light border border-brown-dark rounded text-brown-dark font-mPlus font-semibold text-xl w-full lg:w-11/12 py-22 my-10 mb-20 mx-20 lg:mt-9">
                       <div>詳細検索</div>
                     </button>
+
                   </li>
                 </ul>
               </div>
@@ -50,15 +53,19 @@ export default function Search() {
                 <div className="flex flex-col justify-center text-center bg-white rounded text-sm w-5/12 h-auto ml-30">
                   <div className="my-10">リノベーション事例</div>
                   <div className="text-xxs">これまでにリノベーションされた<br/>建物の一例を紹介！</div>
-                  <div className="w-auto h-auto flex justify-end z-10">
-                    <Image src="/house.svg" height={200} width={200} alt="Icon" className="w-35 h-35 lg:w-45 lg:h-45"/>
+                  <div className="flex justify-end z-10">
+                    <div className="relative w-35 h-35 lg:w-45 lg:h-45">
+                      <Image src="/house.svg" alt="Icon" fill className="object-contain"/>
+                    </div>
                   </div>
                 </div>
                 <div className="flex flex-col justify-center text-center bg-white rounded text-sm w-5/12 h-auto ml-10 mr-30">
                   <div className="my-10">経験者に相談</div>
                   <div className="text-xxs">リノベーション経験者の話を<br/>聞くならココ！</div>
-                  <div className="w-auto h-auto flex justify-end z-10">
-                    <Image src="/forum.svg" alt="Icon" height={200} width={200} className="w-35 h-35 lg:w-45 lg:h-45"/>
+                  <div className="flex justify-end z-10">
+                    <div className="relative w-35 h-35 lg:w-45 lg:h-45">
+                      <Image src="/forum.svg" alt="Icon" fill className="object-contain"/>
+                    </div>
                   </div>
                 </div>
               </div>
