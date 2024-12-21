@@ -1,10 +1,10 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import House from "../component/House";
 
-export default function HouseList() {
+function HouseListContent() {
   const searchParams = useSearchParams();
   const [conditions, setConditions] = useState<string[]>([]);
 
@@ -44,5 +44,13 @@ export default function HouseList() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function HouseList() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HouseListContent />
+    </Suspense>
   );
 }
