@@ -1,7 +1,12 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useAuth } from '../context/AuthContext'
 
 export default function Header() {
+  const { isLoggedIn } = useAuth()
+
   return (
     <div className='flex justify-center z-50 relative'>
       <div className='w-full lg:w-1/2 flex fixed top-0 bg-brown-light drop-shadow-md'>
@@ -40,12 +45,37 @@ export default function Header() {
             <div className='font-mPlus font-semibold text-xxs'>おきにいり</div>
           </div>
           <div className='ml-10 pt-14'>
-            <Link href='/signin'>
-              <button type='button' className='pl-3 w-38 h-35'>
-                <Image src='/person.svg' width={36} height={36} alt='Icon' />
-              </button>
-            </Link>
-            <div className='font-mPlus font-semibold text-xxs'>ログイン</div>
+            <nav>
+              {isLoggedIn ? (
+                <div className='flex flex-col items-center'>
+                  <Link href='/mypage'>
+                    <Image
+                      src='/person.svg'
+                      width={40}
+                      height={36}
+                      alt='Icon'
+                    />
+                    <div className='font-mPlus font-semibold text-xxs'>
+                      マイページ
+                    </div>
+                  </Link>
+                </div>
+              ) : (
+                <div>
+                  <Link href='/signin'>
+                    <Image
+                      src='/person.svg'
+                      width={40}
+                      height={36}
+                      alt='Icon'
+                    />
+                    <button className='w-full h-auto -mt-16 font-mPlus font-semibold text-xxs'>
+                      ログイン
+                    </button>
+                  </Link>
+                </div>
+              )}
+            </nav>
           </div>
         </div>
       </div>
