@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'; // useRouter を使わずに、App Router 用の import
 import { useState } from 'react'
 
 export default function Signup() {
@@ -7,6 +8,7 @@ export default function Signup() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
+  const router = useRouter() // App Router に対応した useRouter を初期化
 
   const handleSignup = async (e: { preventDefault: () => void }) => {
     e.preventDefault() // ページのリロードを防ぐ
@@ -15,7 +17,6 @@ export default function Signup() {
       console.log("送信データ:", { name: username, email: email, password: password });
       const response = await fetch('http://localhost:8080/users', {
         method: 'POST',
-        mode: 'no-cors', // CORS制約を回避
         headers: {
           'Content-Type': 'application/json',
         },
@@ -30,7 +31,13 @@ export default function Signup() {
 
       if (response.ok) {
         const data = await response.json();
-        setMessage(`登録成功！ようこそ、${data.name}さん`);
+        console.log("サーバーからのレスポンスデータ:", data);
+        setMessage(`登録成功！ようこそ、${username}さん`);
+
+        // 3秒後にホームページにリダイレクト
+        setTimeout(() => {
+          router.push('/'); // ホームページにリダイレクト
+        }, 3000);
       } else {
         console.error("サーバーエラー:", response);
         setMessage('登録に失敗しました。入力内容を確認してください。');
