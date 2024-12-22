@@ -34,6 +34,12 @@ export default {
         red: {
           dark: "#861D47",
         },
+        green: {
+          light: "#ACBD6F",
+        },
+        orange: {
+          DEFAULT: "#DA9128",
+        },
       },
       spacing: {
         px: "1px",
@@ -42,6 +48,7 @@ export default {
       },
       fontFamily: {
         mPlus: ['"M PLUS Rounded 1c"', 'serif'],
+        hachi: [ "Hachi Maru Pop", "serif"],
       },
       fontSize: {
         "4xs":"4px",
