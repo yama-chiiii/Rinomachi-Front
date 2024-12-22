@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import ConditionalHeader from './component/ConditionalHeader'
+import { AuthProvider } from './context/AuthContext'
 import './globals.css'
 
 const geistSans = localFont({
@@ -24,15 +25,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-
   return (
-    <html lang="en">
-      
+    <html lang='en'>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ConditionalHeader />
-        {children}
+        <AuthProvider>
+          <ConditionalHeader />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   )
