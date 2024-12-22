@@ -63,7 +63,9 @@ export default function Home() {
               施設・家の例を見たい
             </div>
             <button className='mt-32 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md'>
-              詳細を見る
+              <Link href="/example" className="hover:text-brown">
+                詳細を見る
+              </Link>
             </button>
           </div>
           <div className='flex flex-col relative items-center px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
@@ -79,12 +81,11 @@ export default function Home() {
               リノベーションの<br></br>経験者に相談したい
             </div>
 
-            <Link
-              href={'/consult'}
-              className='mt-32 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md'
-            >
-              詳細を見る
-            </Link>
+            <button className='mt-32 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md'>
+              <Link href={'/consult'} className='hover:text-brown'>
+                詳細を見る
+              </Link>
+            </button>
           </div>
         </div>
         <div className='w-full mt-60 mb-12 px-60 text-2xl lg:text-4xl text-brown-dark'>
