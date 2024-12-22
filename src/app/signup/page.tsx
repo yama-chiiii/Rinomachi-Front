@@ -1,41 +1,48 @@
 'use client'
 
-import { useState } from 'react'
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Signup() {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
+  const router = useRouter()
 
   const handleSignup = async (e: { preventDefault: () => void }) => {
-    e.preventDefault() // ページのリロードを防ぐ
-
+    e.preventDefault()
     try {
-      const response = await fetch('http://localhost:3002/users', {
+      console.log("送信データ:", { name: username, email: email, password: password });
+      const response = await fetch('http://localhost:8080/users', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json', // データをJSON形式で送信
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           name: username,
           email: email,
           password: password,
         }),
-      })
+      });
+
+      console.log("サーバーからのレスポンス:", response);
 
       if (response.ok) {
-        const data = await response.json() // レスポンスのJSONを取得
-        setMessage(`登録成功！ようこそ、${data.name}さん`)
-        setUsername('') // 入力フォームをリセット
-        setEmail('')
-        setPassword('')
+        const data = await response.json();
+        console.log("サーバーからのレスポンスデータ:", data);
+        setMessage(`登録成功！ようこそ、${username}さん`);
+
+        setTimeout(() => {
+          router.push('/');
+        }, 2000);
       } else {
-        setMessage('登録に失敗しました。入力内容を確認してください。')
+        console.error("サーバーエラー:", response);
+        setMessage('登録に失敗しました。入力内容を確認してください。');
       }
     } catch (error) {
-      console.error('エラー:', error)
-      setMessage('サーバーとの通信に失敗しました。')
+      console.error('通信エラー:', error);
+      setMessage('サーバーとの通信に失敗しました。');
     }
   }
 
@@ -85,7 +92,7 @@ export default function Signup() {
               id='password'
               type='password'
               value={password}
-              onChange={(e) => setPassword(e.target.value)} // 修正済み
+              onChange={(e) => setPassword(e.target.value)}
               placeholder='パスワードを入力'
               className='w-full px-4 py-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brown-dark'
               required
