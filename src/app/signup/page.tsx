@@ -12,30 +12,32 @@ export default function Signup() {
     e.preventDefault() // ページのリロードを防ぐ
 
     try {
-      const response = await fetch('http://localhost:3002/users', {
+      console.log("送信データ:", { name: username, email: email, password: password });
+      const response = await fetch('http://localhost:8080/users', {
         method: 'POST',
+        mode: 'no-cors', // CORS制約を回避
         headers: {
-          'Content-Type': 'application/json', // データをJSON形式で送信
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           name: username,
           email: email,
           password: password,
         }),
-      })
+      });
+
+      console.log("サーバーからのレスポンス:", response);
 
       if (response.ok) {
-        const data = await response.json() // レスポンスのJSONを取得
-        setMessage(`登録成功！ようこそ、${data.name}さん`)
-        setUsername('') // 入力フォームをリセット
-        setEmail('')
-        setPassword('')
+        const data = await response.json();
+        setMessage(`登録成功！ようこそ、${data.name}さん`);
       } else {
-        setMessage('登録に失敗しました。入力内容を確認してください。')
+        console.error("サーバーエラー:", response);
+        setMessage('登録に失敗しました。入力内容を確認してください。');
       }
     } catch (error) {
-      console.error('エラー:', error)
-      setMessage('サーバーとの通信に失敗しました。')
+      console.error('通信エラー:', error);
+      setMessage('サーバーとの通信に失敗しました。');
     }
   }
 
