@@ -1,18 +1,17 @@
 'use client'
 
-import { useRouter } from 'next/navigation'; // useRouter を使わずに、App Router 用の import
-import { useState } from 'react'
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function Signup() {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
-  const router = useRouter() // App Router に対応した useRouter を初期化
+  const router = useRouter()
 
   const handleSignup = async (e: { preventDefault: () => void }) => {
-    e.preventDefault() // ページのリロードを防ぐ
-
+    e.preventDefault()
     try {
       console.log("送信データ:", { name: username, email: email, password: password });
       const response = await fetch('http://localhost:8080/users', {
@@ -34,10 +33,9 @@ export default function Signup() {
         console.log("サーバーからのレスポンスデータ:", data);
         setMessage(`登録成功！ようこそ、${username}さん`);
 
-        // 3秒後にホームページにリダイレクト
         setTimeout(() => {
-          router.push('/'); // ホームページにリダイレクト
-        }, 3000);
+          router.push('/');
+        }, 2000);
       } else {
         console.error("サーバーエラー:", response);
         setMessage('登録に失敗しました。入力内容を確認してください。');
@@ -94,7 +92,7 @@ export default function Signup() {
               id='password'
               type='password'
               value={password}
-              onChange={(e) => setPassword(e.target.value)} // 修正済み
+              onChange={(e) => setPassword(e.target.value)}
               placeholder='パスワードを入力'
               className='w-full px-4 py-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brown-dark'
               required
