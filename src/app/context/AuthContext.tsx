@@ -8,6 +8,8 @@ interface AuthContextType {
   userId: string
   login: (username: string, userId: string) => void;
   logout: () => void;
+  likes: { [key: string]: boolean };
+  toggleLike: (houseName: string) => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -16,6 +18,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [userId, setUserId] = useState('');
+  const [likes, setLikes] = useState<{ [key: string]: boolean }>({});
 
   const login = (username: string, userId: string) => {
     setIsLoggedIn(true);
@@ -35,8 +38,15 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     localStorage.removeItem('userId');
   };
 
+  const toggleLike = (houseName: string) => {
+    setLikes((prevLikes) => ({
+      ...prevLikes,
+      [houseName]: !prevLikes[houseName],
+    }));
+  };
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn, username, userId, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, username, userId, login, logout, likes, toggleLike }}>
       {children}
     </AuthContext.Provider>
   );

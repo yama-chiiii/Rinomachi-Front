@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useAuth } from '../context/AuthContext'
 
 type HouseProps = {
   housetype: '賃貸' | '売買'
@@ -9,11 +9,8 @@ type HouseProps = {
 }
 
 export default function House({ housetype, name, address }: HouseProps) {
-  const [isLiked, setIsLiked] = useState(false)
-
-  const toggleLike = () => {
-    setIsLiked(!isLiked)
-  }
+  const { likes, toggleLike } = useAuth();
+  const isLiked = likes[name] || false;
 
   return (
     <div className='w-full h-auto font-mPlus font-semibold'>
@@ -50,7 +47,7 @@ export default function House({ housetype, name, address }: HouseProps) {
                   ? 'text-red-dark scale-125'
                   : 'text-gray-400 scale-100'
               }`}
-              onClick={toggleLike}
+              onClick={() => toggleLike(name)}
             >
               ♥
             </div>
