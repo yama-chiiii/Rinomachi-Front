@@ -40,7 +40,7 @@ function HouseListContent() {
     // APIから建物データを取得
     const fetchBuildings = async () => {
       try {
-        setLoading(true) // ローディング開始
+        setLoading(true)
         console.log("APIリクエストを開始します");
 
         const response = await fetch("http://localhost:8080/buildings", {
@@ -59,24 +59,24 @@ function HouseListContent() {
 
         const data: Building[] = await response.json();
         console.log("取得したデータ:", data);
-        setBuildings(data); // 建物データを状態に格納
+        setBuildings(data);
       } catch (err) {
         console.error("エラー内容:", err);
         setError("データ取得中にエラーが発生しました");
       } finally {
-        setLoading(false) // ローディング終了
+        setLoading(false)
       }
     }
 
-    fetchBuildings() // 関数を呼び出す
+    fetchBuildings()
   }, [])
 
   if (loading) {
-    return <div>Loading...</div> // ローディング中の表示
+    return <div>Loading...</div>
   }
 
   if (error) {
-    return <div className='text-red-500'>{error}</div> // エラー時の表示
+    return <div className='text-red-500'>{error}</div>
   }
 
   return (
