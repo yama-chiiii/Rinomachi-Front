@@ -38,7 +38,7 @@ const Description = () => {
             {/* block クラス：要素をブロック要素として表示し、改行します。
                 inline クラス：要素をインライン要素として表示し、改行しません。
                 hidden クラス：指定された画面サイズでは<br>タグを非表示にします。 */}
-            <div className='mx-24 text-center lg:text-start lg:mx-0 mt-20 border-b-2 border-brown-dark text-md lg:text-2xl'>
+            <div className='mx-24 text-center lg:text-start lg:mx-0 mt-20 border-b-2 border-brown-dark text-md lg:text-xl'>
               <span className='block lg:inline'>
                 中古住宅を現代の暮らしに合わせて
               </span>
@@ -84,7 +84,7 @@ const Description = () => {
             <div className='px-24 py-16 text-sm lg:text-lg text-brown-dark'>
               新たに建築物を住まいを作り変えて、性能・間取り・デザインを刷新し、
               <br />
-              npm 新たな価値を生み出すような大規模な改修を「リノベーション」
+              新たな価値を生み出すような大規模な改修を「リノベーション」
             </div>
           </div>
           <div className='flex flex-row-reverse'>
@@ -93,9 +93,11 @@ const Description = () => {
             </div>
           </div>
           <div className='flex flex-col items-center mt-48 mb-36'>
-            <div className='text-brown-dark text-md lg:text-xl'>
-              リノベーション事例はこちら
-            </div>
+            <button className='text-brown-dark text-md lg:text-xl'>
+              <Link href="{/example}">
+                リノベーション事例はこちら
+              </Link>
+            </button>
             <div className='text-brown-dark -mt-8 lg:-mt-12 text-xs lg:text-lg font-black'>
               ────────────────
             </div>
