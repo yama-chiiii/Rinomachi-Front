@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 
 export default function Signin() {
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
   const { login } = useAuth()
@@ -25,12 +25,12 @@ export default function Signin() {
       if (response.ok) {
         const users = await response.json()
         const user = users.find(
-          (u: { name: string; password: string }) =>
-            u.name === username && u.password === password,
+          (u: { email: string; password: string }) =>
+            u.email === email && u.password === password,
         )
 
         if (user) {
-          login(user.name) // ログイン状態を更新
+          login(user.name,user.uid) // ログイン状態を更新
           setMessage('ログイン成功！')
           router.push('/') // ホームにリダイレクト
         } else {
@@ -48,7 +48,7 @@ export default function Signin() {
   return (
     <div className='w-full min-h-screen flex justify-center bg-brown-light font-mPlus font-semibold'>
       <div className='w-full max-w-md p-8 rounded-lg shadow-md text-brown-dark'>
-        <h1 className='text-4xl lg:text-5xl text-bold mt-120 mb-8 text-center'>
+        <h1 className='text-4xl lg:text-5xl text-bold mt-120 lg:mt-60 mb-8 text-center'>
           リノマチ！
         </h1>
         <div className='text-xl lg:text-2xl text-opacity-75 mb-30 text-center'>
@@ -56,25 +56,14 @@ export default function Signin() {
         </div>
         <form onSubmit={handleSignin}>
           <div className='mx-10 mb-10'>
-            <label htmlFor='username' className='block mb-2 text-lg'>
-              ユーザーネーム
-            </label>
-            <input
-              id='username'
-              value={username}
-              type='text'
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder='ユーザーネームを入力'
-              className='w-full px-4 py-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brown-dark'
-            />
-          </div>
-          <div className='mx-10 mb-10'>
             <label htmlFor='email' className='block mb-2 text-lg'>
               メールアドレス
             </label>
             <input
               id='email'
               type='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder='example@email.com'
               className='w-full px-4 py-10 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-brown-dark'
             />
@@ -99,6 +88,7 @@ export default function Signin() {
             >
               サインイン
             </button>
+          {message && <p>{message}</p>}
           </div>
         </form>
         <div className='mx-10 mt-35 text-center'>
@@ -112,8 +102,6 @@ export default function Signin() {
           </Link>
         </div>
       </div>
-
-      {message && <p>{message}</p>}
     </div>
   )
 }
