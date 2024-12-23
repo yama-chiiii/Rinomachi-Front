@@ -31,44 +31,44 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className='w-full mt-60 mb-12 px-60 text-2xl lg:text-4xl text-brown-dark'>
+        <div className='w-full mt-60 mb-12 px-40 text-2xl lg:text-4xl text-brown-dark'>
           相談する・探す
         </div>
-        <div className='w-4/6 lg:w-auto h-auto flex flex-col lg:flex-row justify-around mx-4 pb-20 py-12 lg:mx-32 px-12 lg:px-20 rounded-md bg-white'>
+        <div className='w-5/6 lg:w-auto h-auto flex flex-col lg:flex-row justify-around pb-20 py-12 lg:mx-32 px-30 lg:px-20 rounded-md bg-white'>
           {/* 空き家 */}
-          <div className='flex flex-col relative items-center lg:px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
+          <div className='flex flex-col relative items-center px-12 lg:px-0 mx-10 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
             <div className='absolute -top-12% flex items-center px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
               <Image src='/home.svg' width={32} height={32} alt='Icon' />
             </div>
-            <div className='mt-52 text-brown-dark text-center text-xl lg:text-sm'>
+            <div className='mt-52 lg:mt-45 text-brown-dark text-center text-xl lg:text-sm'>
               リノベーション可能な
               <br />
               空き家を探したい
             </div>
 
-            <button className='mt-32 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md'>
+            <button className='mt-32 lg:mt-15 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md lg:text-sm'>
               <Link href={'./search'} className='hover:text-brown'>
                 詳細を見る
               </Link>
             </button>
           </div>
 
-          <div className='flex flex-col relative items-center px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
+          <div className='flex flex-col relative items-center px-12 lg:px-0 mx-10 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
             <div className='absolute -top-12% flex items-center px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
               <Image src='/tool.svg' width={32} height={32} alt='Icon' />
             </div>
-            <div className='mt-52 text-brown-dark text-xl lg:text-sm text-center'>
+            <div className='mt-52 lg:mt-45 text-brown-dark text-xl lg:text-sm text-center'>
               リノベーションされた
               <br />
               施設・家の例を見たい
             </div>
-            <button className='mt-32 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md'>
+            <button className='mt-32 lg:mt-15 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md lg:text-sm'>
               <Link href={"/example"} className="hover:text-brown">
                 詳細を見る
               </Link>             
             </button>
           </div>
-          <div className='flex flex-col relative items-center px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
+          <div className='flex flex-col relative items-center px-12 lg:px-0 mx-10 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
             <div className='absolute -top-12% flex items-center px-12 py-12 rounded-full text-center text-md bg-brown-dark'>
               <Image
                 src='/person_search.svg'
@@ -77,11 +77,11 @@ export default function Home() {
                 alt='Icon'
               />
             </div>
-            <div className='mt-52 text-brown-dark text-xl lg:text-sm text-center'>
+            <div className='mt-52 lg:mt-45 text-brown-dark text-xl lg:text-sm text-center'>
               リノベーションの<br></br>経験者に相談したい
             </div>
 
-            <button className='mt-32 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md'>
+            <button className='mt-32 lg:mt-15 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md lg:text-sm'>
               <Link href={'/consult'} className='hover:text-brown'>
                 詳細を見る
               </Link>
