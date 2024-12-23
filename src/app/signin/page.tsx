@@ -30,7 +30,7 @@ export default function Signin() {
         )
 
         if (user) {
-          login(user.name) // ログイン状態を更新
+          login(user.name,user.uid) // ログイン状態を更新
           setMessage('ログイン成功！')
           router.push('/') // ホームにリダイレクト
         } else {
