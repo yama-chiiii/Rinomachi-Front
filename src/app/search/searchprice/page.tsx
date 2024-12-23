@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import Line from '@/app/component/Line'
 import Price from '@/app/component/Price'
 import { useRouter } from 'next/navigation'
@@ -44,7 +45,9 @@ export default function SearchLine() {
           onClick={handleSearch}
           className='my-20 mb-80 px-30 py-15 rounded bg-brown-dark text-white text-xl hover:text-brown'
         >
-          この条件で検索する
+          <Link href="/houseList">
+            この条件で検索する
+          </Link>
         </button>
       </div>
     </div>

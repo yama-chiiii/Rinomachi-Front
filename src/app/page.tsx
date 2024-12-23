@@ -18,14 +18,14 @@ export default function Home() {
         </div>
         <div className='w-full flex justify-center relative mt-64'>
           {/* 要修正 */}
-          <div className='absolute -top-44% right-12% lg:right-8% px-8 lg:px-12 py-20 lg:py-32 rounded-full text-center text-xs lg:text-lg bg-red-dark text-white'>
+          <div className='absolute -top-44% right-12% lg:right-8% px-8 lg:px-12 py-20 lg:py-30 rounded-full text-center text-xs lg:text-lg bg-red-dark text-white'>
             はじめての
             <br />
             人向け
           </div>
           <Link
             href={'/description'}
-            className='w-full mx-32 py-32 bg-brown text-2xl lg:text-5xl text-white text-center rounded-lg hover:bg-brown-hover'
+            className='w-full mx-32 py-40 bg-brown text-2xl lg:text-5xl text-white text-center rounded-lg hover:bg-brown-hover'
           >
             リノベーションとは？
           </Link>
@@ -63,9 +63,9 @@ export default function Home() {
               施設・家の例を見たい
             </div>
             <button className='mt-32 mb-12 lg:mx-40 px-32 lg:px-12 py-16 rounded-lg whitespace-nowrap bg-brown-dark text-white text-md'>
-              <Link href="/example" className="hover:text-brown">
+              <Link href={"/example"} className="hover:text-brown">
                 詳細を見る
-              </Link>
+              </Link>             
             </button>
           </div>
           <div className='flex flex-col relative items-center px-12 mx-12 mt-24 mb-24 rounded-lg bg-brown-light border-2 border-brown-dark'>
