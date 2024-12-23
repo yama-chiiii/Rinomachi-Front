@@ -19,13 +19,17 @@ export default function Header() {
         <div className='flex items-center ml-auto mr-5 '>
           <div className='ml-10 pt-14'>
             <button type='button' className='pl-3 w-38 h-35'>
-              <Image src='/watch.svg' width={36} height={36} alt='Icon' />
+                <Link href="/history">
+                    <Image src='/watch.svg' width={36} height={36} alt='Icon' />
+                </Link>
             </button>
             <div className='font-mPlus font-semibold text-xxs'>最近見た</div>
           </div>
           <div className='ml-10 pt-14'>
             <button type='button' className='pl-13 w-48 h-35'>
-              <Image src='/description.svg' width={36} height={36} alt='Icon' />
+                <Link href="/save">
+                    <Image src='/description.svg' width={36} height={36} alt='Icon' />
+                </Link>
             </button>
             <div className='font-mPlus font-semibold text-xxs'>
               保存した条件
@@ -33,7 +37,10 @@ export default function Header() {
           </div>
           <div className='ml-10 pt-14'>
             <button type='button' className='pl-7 w-42 h-35'>
-              <Image src='/favorite.svg' width={36} height={36} alt='Icon' />
+                <Link href='/favorite'>
+                    <Image src='/favorite.svg' width={36} height={36} alt='Icon' />
+                </Link>
+              
             </button>
             <div className='font-mPlus font-semibold text-xxs'>おきにいり</div>
           </div>
