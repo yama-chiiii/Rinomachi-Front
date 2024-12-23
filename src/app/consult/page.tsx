@@ -139,7 +139,7 @@ export default function Consult() {
     <div className='w-full min-h-screen flex flex-col items-center font-mPlus font-semibold'>
       <div className='w-full lg:w-1/2 min-h-screen flex flex-col bg-brown-light text-brown-dark'>
         <div className='mt-164 lg:mx-44 bg-white'>
-          <div className='w-full items-center lg:pl-52'>
+          <div className='w-full items-center lg:pl-20'>
             <div>
               <div className='w-full h-auto items-center flex flex-row pt-24'>
                 <Image
