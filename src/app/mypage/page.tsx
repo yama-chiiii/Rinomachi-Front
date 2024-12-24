@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link";
+import Image from 'next/image'
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
@@ -34,7 +35,9 @@ export default function Mypage() {
       <div className='w-full lg:w-1/2 min-h-screen flex flex-col items-center bg-brown-light text-red-dark'>
         <div className='w-4/5 mt-184 mx-60 bg-white'>
           <div className="flex flex-col items-center">
-            <div className='bg-red-500 rounded-full'>a</div>
+            <div className='w-100 h-100 mt-20 rounded-full rounded-full overflow-hidden'>
+              <Image src="/celebi.png" alt="Image" height={150} width={150} />
+            </div>
             <div className='text-brown-dark text-2xl '>{username}</div>
           </div>
           <div className='mt-36 text-brown-dark text-xl border-b-2 border-brown mx-12'>
