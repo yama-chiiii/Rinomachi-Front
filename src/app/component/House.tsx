@@ -137,9 +137,9 @@ export default function House({
               <tr>
               <td className="py-4 px-6 border-2 border-brown">{floors}</td>
                 <td className="py-4 px-6 border-2 border-brown">{structure}</td>
-                <td className="py-4 px-6 border-2 border-brown">{price}万円</td>
+                <td className="py-4 px-6 border-2 border-brown">{price}円</td>
                 <td className="py-4 px-6 border-2 border-brown">{age}年</td>
-                <td className="py-4 px-6 border-2 border-brown">{area}m²</td>
+                <td className="py-4 px-6 border-2 border-brown">{area}坪</td>
                 <td className='py-4 px-6 border-2 border-brown '>
                   <div className='relative inline-block'>
                     <div className='absolute top-2 left-1 w-full h-full bg-brown-hover rounded-md'></div>

@@ -252,7 +252,7 @@ const History = () => {
         </div>
         <div className="text-lg">{username}さんの履歴一覧</div>
         <div className="w-full flex justify-center">
-          <div className="w-11/12 min-h-screen mt-12 bg-white">
+          <div className="w-full lg:w-11/12 min-h-screen mt-12 bg-white">
             {buildings.length > 0 ? (
               buildings.map((building) => (
                 <House
