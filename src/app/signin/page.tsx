@@ -30,7 +30,7 @@ export default function Signin() {
         )
 
         if (user) {
-          login(user.name) // ログイン状態を更新
+          login(user.name,user.uid) // ログイン状態を更新
           setMessage('ログイン成功！')
           router.push('/') // ホームにリダイレクト
         } else {
@@ -48,7 +48,7 @@ export default function Signin() {
   return (
     <div className='w-full min-h-screen flex justify-center bg-brown-light font-mPlus font-semibold'>
       <div className='w-full max-w-md p-8 rounded-lg shadow-md text-brown-dark'>
-        <h1 className='text-4xl lg:text-5xl text-bold mt-120 mb-8 text-center'>
+        <h1 className='text-4xl lg:text-5xl text-bold mt-120 lg:mt-60 mb-8 text-center'>
           リノマチ！
         </h1>
         <div className='text-xl lg:text-2xl text-opacity-75 mb-30 text-center'>

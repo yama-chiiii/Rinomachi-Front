@@ -1,14 +1,28 @@
 'use client'
-import Image from 'next/image'
-import { useState } from 'react'
+import Image from 'next/image';
+import { useState } from 'react';
 
 type HouseProps = {
-  housetype: '賃貸' | '売買'
-  name: string //建物の名前
-  address: string //建物の住所
-}
+  housetype: "賃貸" | "売買";
+  name: string; // 建物の名前
+  address: string; // 建物の住所
+  floors: number; // 階数
+  structure: string; // 構造
+  price: number; // 家賃や価格
+  age: number; // 築年数
+  area: number; // 床面積
+};
 
-export default function House({ housetype, name, address }: HouseProps) {
+export default function House({
+  housetype,
+  name,
+  address,
+  floors,
+  structure,
+  price,
+  age,
+  area,
+}: HouseProps) {
   const [isLiked, setIsLiked] = useState(false)
 
   const toggleLike = () => {
@@ -87,11 +101,11 @@ export default function House({ housetype, name, address }: HouseProps) {
             </thead>
             <tbody className='text-xs lg:ttext-sm'>
               <tr>
-                <td className='py-4 px-6 border-2 border-brown'>2</td>
-                <td className='py-4 px-6 border-2 border-brown'>木造</td>
-                <td className='py-4 px-6 border-2 border-brown'>7.77万円</td>
-                <td className='py-4 px-6 border-2 border-brown'>100年</td>
-                <td className='py-4 px-6 border-2 border-brown'>1000m²</td>
+              <td className="py-4 px-6 border-2 border-brown">{floors}</td>
+                <td className="py-4 px-6 border-2 border-brown">{structure}</td>
+                <td className="py-4 px-6 border-2 border-brown">{price}万円</td>
+                <td className="py-4 px-6 border-2 border-brown">{age}年</td>
+                <td className="py-4 px-6 border-2 border-brown">{area}m²</td>
                 <td className='py-4 px-6 border-2 border-brown '>
                   <div className='relative inline-block'>
                     <div className='absolute top-2 left-1 w-full h-full bg-brown-hover rounded-md'></div>
