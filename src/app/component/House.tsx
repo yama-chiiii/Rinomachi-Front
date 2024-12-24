@@ -40,7 +40,6 @@ export default function House({
             bid: buildingId,
           }),
     });
-    console.log("Posted");
 
   }
 
@@ -51,7 +50,6 @@ export default function House({
             'Content-Type': 'application/json',
           },
     });
-    console.log("Deleted");
 
   }
 
@@ -59,11 +57,9 @@ export default function House({
       setIsLiked(!isLiked)
       if (isLiked) {
         deleteFavorite()
-        console.log("Disliked");
       }
       else{
         postFavorite()
-        console.log("Liked");
       }
     }
 
