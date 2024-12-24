@@ -30,12 +30,12 @@ function HouseListContent() {
 
   useEffect(() => {
     const conditionsParam = searchParams.get('conditions');
+    console.log('取得したクエリパラメータ:', conditionsParam);
     if (conditionsParam) {
       setConditions(conditionsParam.split(','));
     }
   }, [searchParams]);
 
-  // APIから建物データを取得
   const fetchBuildings = async () => {
     try {
       setLoading(true);
@@ -47,9 +47,6 @@ function HouseListContent() {
           'Content-Type': 'application/json',
         },
       });
-
-      console.log('レスポンス全体:', response);
-
       if (!response.ok) {
         const errorText = await response.text();
         throw new Error(`HTTPエラー: ${response.status} ${response.statusText} - ${errorText}`);
