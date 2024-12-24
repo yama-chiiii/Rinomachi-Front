@@ -20,15 +20,24 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [userId, setUserId] = useState('');
   const [likes, setLikes] = useState<{ [key: string]: boolean }>({});
 
-  // ローカルストレージから状態を復元
   useEffect(() => {
+    const savedToken = localStorage.getItem('authToken');
+    const savedUsername = localStorage.getItem('username');
+    const savedUserId = localStorage.getItem('userId');
     const savedLikes = localStorage.getItem('likes');
+
+    if (savedToken && savedUsername && savedUserId) {
+      setIsLoggedIn(true);
+      setUsername(savedUsername);
+      setUserId(savedUserId);
+    }
+
     if (savedLikes) {
       setLikes(JSON.parse(savedLikes));
     }
   }, []);
 
-  // ログイン状態をローカルストレージに保存
+  // いいね状態をローカルストレージに保存
   useEffect(() => {
     if (Object.keys(likes).length > 0) {
       localStorage.setItem('likes', JSON.stringify(likes));
@@ -39,9 +48,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setIsLoggedIn(true);
     setUsername(username);
     setUserId(userId);
-    localStorage.setItem('authToken', 'example-token'); // 仮のトークン
-    localStorage.setItem('username', username); // ユーザー名を保存
-    localStorage.setItem('userId', userId); // ユーザーIDを保存
+    localStorage.setItem('authToken', 'example-token');
+    localStorage.setItem('username', username);
+    localStorage.setItem('userId', userId);
   };
 
   const logout = () => {
