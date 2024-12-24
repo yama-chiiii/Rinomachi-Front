@@ -121,6 +121,7 @@ function HouseListContent() {
         <div className="w-full lg:w-11/12 mt-32 bg-white">
           {buildings.map((building) => (
             <House
+              buildingId={building.bid}
               key={building.bid}
               housetype={building.contract === '賃貸' ? '賃貸' : '売買'}
               name={building.description}

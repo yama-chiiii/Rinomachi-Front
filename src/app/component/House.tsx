@@ -1,8 +1,10 @@
 'use client'
 import Image from 'next/image';
 import { useState } from 'react';
+import { useAuth } from '../context/AuthContext'
 
 type HouseProps = {
+  buildingId: string;
   housetype: "賃貸" | "売買";
   name: string; // 建物の名前
   address: string; // 建物の住所
@@ -14,6 +16,7 @@ type HouseProps = {
 };
 
 export default function House({
+  buildingId,
   housetype,
   name,
   address,
@@ -24,10 +27,41 @@ export default function House({
   area,
 }: HouseProps) {
   const [isLiked, setIsLiked] = useState(false)
+  const { userId,} = useAuth();
 
-  const toggleLike = () => {
-    setIsLiked(!isLiked)
+  const postFavorite = async () => {
+    await fetch(`http://localhost:8080/users/${userId}/favorites`, {
+      method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            uid: userId,
+            bid: buildingId,
+          }),
+    });
+
   }
+
+  const deleteFavorite = async () => {
+    await fetch(`http://localhost:8080/users/${userId}/favorites/${buildingId}`, {
+      method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+    });
+
+  }
+
+    const toggleLike = () => {
+      setIsLiked(!isLiked)
+      if (isLiked) {
+        deleteFavorite()
+      }
+      else{
+        postFavorite()
+      }
+    }
 
   return (
     <div className='w-full h-auto font-mPlus font-semibold'>
