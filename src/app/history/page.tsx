@@ -264,8 +264,7 @@ const History = () => {
                   structure={building.structure}
                   price={building.price}
                   age={building.age}
-                  area={building.area}
-                />
+                  area={building.area} buildingId={''}                />
               ))
             ) : (
               <p className="text-gray-500 text-center">履歴はありません。</p>
