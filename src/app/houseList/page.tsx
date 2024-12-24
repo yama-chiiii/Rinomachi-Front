@@ -28,7 +28,6 @@ function HouseListContent() {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  // クエリパラメータから条件を取得
   useEffect(() => {
     const conditionsParam = searchParams.get('conditions');
     if (conditionsParam) {
