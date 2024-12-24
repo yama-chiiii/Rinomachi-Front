@@ -52,7 +52,6 @@ function HouseListContent() {
       console.log('レスポンス全体:', response);
 
       if (!response.ok) {
-        // レスポンス詳細を取得してログに出力
         const errorText = await response.text();
         throw new Error(`HTTPエラー: ${response.status} ${response.statusText} - ${errorText}`);
       }
