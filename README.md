@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# リノまち！
+バックエンド → https://github.com/meg44k/Rinomachi-Back
 
-## Getting Started
+カラビナテクノロジーの長期インターンにてチーム三人で開発したサイトとなります。
 
-First, run the development server:
+## 開発背景
+- 今回のハッカソンのお題「北九州・小倉の街を豊かにする」
+- 小倉の街の課題・・・他の街より空き家が多い！
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+これを解決するためのサイトがこの __リノまち！__ です
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 提案
+#### リノまちは、空き家を使いたい人と空き家を繋げるためのサイトです
 
-## Learn More
+- 空き家を使いたい人と空き家をマッチングする
+- リノベーションについて知る
+- リノベーション経験者に相談する
 
-To learn more about Next.js, take a look at the following resources:
+## 使用技術
+- フロントエンド
+  - Next.js
+  - TailWindCSS
+  - React
+- バックエンド
+  - Go
+  - MySQL
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 開発期間
+約一ケ月
