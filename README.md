@@ -32,6 +32,6 @@
 
 ## メンバー
 3人
-デザイン制作 → yama-chiiii
-フロントエンド担当 → yama-chiiii,noah3139
-バックエンド担当 → meg44k
+- デザイン制作 → yama-chiiii
+- フロントエンド担当 → yama-chiiii,noah3139
+- バックエンド担当 → meg44k
